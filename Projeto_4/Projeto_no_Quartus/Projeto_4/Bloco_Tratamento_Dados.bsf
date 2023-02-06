@@ -1,0 +1,128 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 296 208)
+	(text "Bloco_Tratamento_Dados" (rect 5 0 224 23)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 167 35 188)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_in" (rect 0 0 48 23)(font "Intel Clear" (font_size 8)))
+		(text "clk_in" (rect 21 27 69 50)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "ir_in" (rect 0 0 36 23)(font "Intel Clear" (font_size 8)))
+		(text "ir_in" (rect 21 43 57 66)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "mute_in" (rect 0 0 69 23)(font "Intel Clear" (font_size 8)))
+		(text "mute_in" (rect 21 59 90 82)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "play_in" (rect 0 0 60 23)(font "Intel Clear" (font_size 8)))
+		(text "play_in" (rect 21 75 81 98)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "selecao_in" (rect 0 0 88 23)(font "Intel Clear" (font_size 8)))
+		(text "selecao_in" (rect 21 91 109 114)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "stop_in" (rect 0 0 62 23)(font "Intel Clear" (font_size 8)))
+		(text "stop_in" (rect 21 107 83 130)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "mute_local" (rect 0 0 93 23)(font "Intel Clear" (font_size 8)))
+		(text "mute_local" (rect 166 27 259 50)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 32)(pt 264 32))
+	)
+	(port
+		(pt 280 48)
+		(output)
+		(text "play_local" (rect 0 0 83 23)(font "Intel Clear" (font_size 8)))
+		(text "play_local" (rect 176 43 259 66)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 48)(pt 264 48))
+	)
+	(port
+		(pt 280 64)
+		(output)
+		(text "selecao_local" (rect 0 0 112 23)(font "Intel Clear" (font_size 8)))
+		(text "selecao_local" (rect 147 59 259 82)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 64)(pt 264 64))
+	)
+	(port
+		(pt 280 80)
+		(output)
+		(text "stop_local" (rect 0 0 86 23)(font "Intel Clear" (font_size 8)))
+		(text "stop_local" (rect 173 75 259 98)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 80)(pt 264 80))
+	)
+	(port
+		(pt 280 96)
+		(output)
+		(text "mute_remoto" (rect 0 0 116 23)(font "Intel Clear" (font_size 8)))
+		(text "mute_remoto" (rect 143 91 259 114)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 96)(pt 264 96))
+	)
+	(port
+		(pt 280 112)
+		(output)
+		(text "play_remoto" (rect 0 0 107 23)(font "Intel Clear" (font_size 8)))
+		(text "play_remoto" (rect 152 107 259 130)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 112)(pt 264 112))
+	)
+	(port
+		(pt 280 128)
+		(output)
+		(text "selecao_remoto" (rect 0 0 135 23)(font "Intel Clear" (font_size 8)))
+		(text "selecao_remoto" (rect 124 123 259 146)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 128)(pt 264 128))
+	)
+	(port
+		(pt 280 144)
+		(output)
+		(text "stop_remoto" (rect 0 0 109 23)(font "Intel Clear" (font_size 8)))
+		(text "stop_remoto" (rect 150 139 259 162)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 144)(pt 264 144))
+	)
+	(drawing
+		(rectangle (rect 16 16 264 176))
+	)
+)

@@ -1,0 +1,29 @@
+Wed Sep 28 14:31:51 ART 2022
+Trace back: Bad sequence in.main_pane.objects.interior.cs.body.tree.lwchildsite.clipper.canvas.sfchildsite.tree, aborting query. (1)
+    while executing
+"$itk_component(tree) insertquery end """
+    (while configuring option "-queryroot" for widget "::.main_pane.objects.interior.cs.body.tree")
+    (object "::.main_pane.objects.interior.cs.body.tree" method "::itk::Archetype::configure" )
+    invoked from within
+"$tree configure -queryroot $top"
+    (procedure "_resetTree" line 11)
+    invoked from within
+"_resetTree $w"
+    (procedure "QObjects::sort" line 4)
+    invoked from within
+"QObjects::sort .main_pane.objects 0 ascending"
+    ("eval" body line 1)
+    invoked from within
+"eval $itk_option(-sortcommand) $column $dir"
+    (object "::.main_pane.objects.interior.cs.body.tree" method "::vsimwidgets::Hierarchy::sort" body line 26)
+    invoked from within
+"sort $sortIdx $dir"
+    (object "::.main_pane.objects.interior.cs.body.tree" method "::vsimwidgets::Hierarchy::_initializeSortColumn" body line 10)
+    invoked from within
+"::.main_pane.objects.interior.cs.body.tree _initializeSortColumn"
+    (in namespace inscope "::vsimwidgets::Hierarchy" script line 1)
+    invoked from within
+"namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.objects.interior.cs.body.tree _initializeSortColumn}"
+    ("after" script)
+  <2:C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/tk8.6/bgerror.tcl:106: ::tkerror {Bad sequence in.main_pane.objects.interior.cs.body.tree.lwchildsite.clipper.canvas.sfchildsite.tree, aborting query. (1)}
+  <1:eval:1: ::tk::dialog::error::bgerror {Bad sequence in.main_pane.objects.interior.cs.body.tree.lwchildsite.clipper.canvas.sfchildsite.tree, aborting query. (1)}

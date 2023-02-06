@@ -1,0 +1,36 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_4/simulation/modelsim
+vDivisorClock
+!s110 1664240236
+!i10b 1
+!s100 X[E3V076Kz`UHD38MK1k=0
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I57]GURe^QRfJZ`ElMdO6l3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1664236083
+8C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_4/DivisorClock.v
+FC:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_4/DivisorClock.v
+!i122 0
+L0 1 23
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1664240235.000000
+!s107 C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_4/DivisorClock.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_4|C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_4/DivisorClock.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_4
+tCvgOpt 0
+n@divisor@clock

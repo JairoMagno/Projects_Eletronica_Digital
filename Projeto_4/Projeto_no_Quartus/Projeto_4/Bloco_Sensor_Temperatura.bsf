@@ -1,0 +1,79 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 248 176)
+	(text "Bloco_Sensor_Temperatura" (rect 5 0 242 23)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 135 35 156)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock_in" (rect 0 0 68 23)(font "Intel Clear" (font_size 8)))
+		(text "clock_in" (rect 21 27 89 50)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "scl_out" (rect 0 0 60 23)(font "Intel Clear" (font_size 8)))
+		(text "scl_out" (rect 151 27 211 50)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 32)(pt 216 32))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "centena" (rect 0 0 68 23)(font "Intel Clear" (font_size 8)))
+		(text "centena" (rect 143 59 211 82)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 64)(pt 216 64))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "dezena[3..0]" (rect 0 0 105 23)(font "Intel Clear" (font_size 8)))
+		(text "dezena[3..0]" (rect 106 75 211 98)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 80)(pt 216 80)(line_width 3))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "unidade[3..0]" (rect 0 0 112 23)(font "Intel Clear" (font_size 8)))
+		(text "unidade[3..0]" (rect 99 91 211 114)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 96)(pt 216 96)(line_width 3))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "decimo[3..0]" (rect 0 0 106 23)(font "Intel Clear" (font_size 8)))
+		(text "decimo[3..0]" (rect 105 107 211 130)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 112)(pt 216 112)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(bidir)
+		(text "sda_in" (rect 0 0 54 23)(font "Intel Clear" (font_size 8)))
+		(text "sda_in" (rect 157 43 211 66)(font "Intel Clear" (font_size 8)))
+		(line (pt 232 48)(pt 216 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 144))
+	)
+)
