@@ -1,0 +1,16 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY Questao8 IS
+PORT(
+		A, B	: IN STD_LOGIC_VECTOR(3 downto 1);
+		Saida	: OUT STD_LOGIC;
+);
+END Questao8;
+
+ARCHITECTURE bhv OF Questao8 IS
+
+
+
+END ARCHITECTURE;

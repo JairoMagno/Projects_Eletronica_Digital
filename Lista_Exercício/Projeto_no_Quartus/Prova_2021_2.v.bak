@@ -1,0 +1,39 @@
+module Prova_2021_2
+(
+	input [15:0]A, 
+	input [15:0]B,
+	output Saida
+);
+	
+	wire [15:0]G1;
+	wire WireNor0;
+	genvar i;
+	
+	generate
+		for(i = 0 ; i < 16 ; i = i + 1) begin : L1
+			 if(i == 0) begin
+			 
+				assign G1[i] = ~(A[i] && B[i]); //NAND
+			 end
+			 
+			 else if(i == (1 || 3 || 5 || 7 || 9 || 11 || 13)) begin
+			  
+				assign G1[i] = ~(A[i] ^^ B[i]); //XNOR
+			 end
+			 
+			 else if(i == (2 || 4 || 6 || 8 || 10 || 12 || 14)) begin
+			  
+				assign G1[i] = (A[i] ^^ B[i]); //XOR
+			 end
+			 
+			 else if(i == 15) begin
+				
+				assign G1[i] = ~(A[i] || B[i]); //NOR
+		end 
+	endgenerate 
+	
+	assign WireNor0  = ^G1[];
+	
+	assign Saida = ~WireNor0;
+
+endmodule 

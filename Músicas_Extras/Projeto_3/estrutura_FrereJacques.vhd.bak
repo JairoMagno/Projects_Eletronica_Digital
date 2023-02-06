@@ -1,0 +1,29 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY estrutura_FrereJacques IS
+	PORT(
+		clock_est, stop, play	: IN std_logic;
+		buzzer : OUT std_logic
+	);
+END estrutura_FrereJacques;
+
+ARCHITECTURE arc_est_frere OF estrutura_FrereJacques IS
+	SIGNAL Disparo_est, Saida_est : std_logic;
+	SIGNAL Overflow_est : integer;
+	
+BEGIN
+	
+	temp	:	temporizador PORT MAP(
+		Clock_in => clock_est;
+		Disparo => Disparo_est;
+		Overflow => Overflow_est;
+		Saida => Saida_est;
+	);
+		
+		
+	div_clk : divisor_clock PORT MAP(
+		
+	);
+	
+END ARCHITECTURE;
