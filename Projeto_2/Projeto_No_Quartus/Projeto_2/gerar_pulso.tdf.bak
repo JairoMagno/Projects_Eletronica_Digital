@@ -1,0 +1,11 @@
+TITLE "Gera Pulso";
+
+SUBDESIGN debounce(
+
+)
+
+VARIABLE
+
+BEGIN
+
+END;

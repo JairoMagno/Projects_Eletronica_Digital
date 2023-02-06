@@ -1,0 +1,225 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 616 24 848 40)
+	(text "INPUT" (rect 189 0 225 13)(font "Arial" (font_size 6)))
+	(text "clock_selecionado" (rect 5 0 126 15)(font "Arial" ))
+	(pt 232 8)
+	(drawing
+		(line (pt 148 12)(pt 173 12))
+		(line (pt 148 4)(pt 173 4))
+		(line (pt 177 8)(pt 232 8))
+		(line (pt 148 12)(pt 148 4))
+		(line (pt 173 4)(pt 177 8))
+		(line (pt 173 12)(pt 177 8))
+	)
+	(text "VCC" (rect 192 7 216 20)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 680 56 848 72)
+	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
+	(text "stop" (rect 5 0 33 19)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 152 20)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 680 88 848 104)
+	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
+	(text "play" (rect 5 0 30 19)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 152 20)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 680 120 848 136)
+	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
+	(text "mute" (rect 5 0 38 19)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 152 20)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 1408 216 1584 232)
+	(text "OUTPUT" (rect 1 0 51 13)(font "Arial" (font_size 6)))
+	(text "buzzer" (rect 90 0 131 15)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1408 192 1488 216))
+)
+(symbol
+	(rect 832 176 984 288)
+	(text "song_starwars_25MHz" (rect 5 0 154 15)(font "Arial" ))
+	(text "inst2" (rect 8 96 39 115)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 33 15)(font "Arial" ))
+		(text "clock" (rect 21 27 54 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "play" (rect 0 0 25 15)(font "Arial" ))
+		(text "play" (rect 21 59 46 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "stop" (rect 0 0 28 15)(font "Arial" ))
+		(text "stop" (rect 21 43 49 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 152 48)
+		(output)
+		(text "buzzer" (rect 0 0 41 15)(font "Arial" ))
+		(text "buzzer" (rect 106 43 147 58)(font "Arial" ))
+		(line (pt 152 48)(pt 136 48))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "playing" (rect 0 0 46 15)(font "Arial" ))
+		(text "playing" (rect 102 27 148 42)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
+		(unused)
+	)
+	(drawing
+		(rectangle (rect 16 16 136 96))
+	)
+)
+(symbol
+	(rect 1128 192 1312 272)
+	(text "controle_buzzer" (rect 5 0 106 15)(font "Arial" ))
+	(text "inst4" (rect 8 64 39 83)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "buzzer_in" (rect 0 0 61 15)(font "Arial" ))
+		(text "buzzer_in" (rect 21 27 82 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "mute" (rect 0 0 33 15)(font "Arial" ))
+		(text "mute" (rect 21 43 54 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "buzzer_out" (rect 0 0 69 15)(font "Arial" ))
+		(text "buzzer_out" (rect 95 27 164 42)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 64))
+	)
+)
+(connector
+	(text " play" (rect 768 224 797 243)(font "Intel Clear" ))
+	(pt 808 240)
+	(pt 832 240)
+)
+(connector
+	(text " stop" (rect 768 208 799 227)(font "Intel Clear" ))
+	(pt 808 224)
+	(pt 832 224)
+)
+(connector
+	(text "clock_selecionado" (rect 688 192 803 211)(font "Intel Clear" ))
+	(pt 808 208)
+	(pt 832 208)
+)
+(connector
+	(text "mute" (rect 1065 224 1098 243)(font "Intel Clear" ))
+	(pt 1096 240)
+	(pt 1128 240)
+)
+(connector
+	(text "<<__$DEF_ALIAS10351>>" (rect 1002 200 1169 219)(font "Intel Clear" ))
+	(pt 984 224)
+	(pt 1128 224)
+)
+(connector
+	(pt 1312 224)
+	(pt 1408 224)
+)
+(connector
+	(text " clock_selecionado" (rect 872 16 991 35)(font "Intel Clear" ))
+	(pt 848 32)
+	(pt 864 32)
+)
+(connector
+	(text " stop" (rect 872 48 903 67)(font "Intel Clear" ))
+	(pt 848 64)
+	(pt 864 64)
+)
+(connector
+	(text " play" (rect 872 80 901 99)(font "Intel Clear" ))
+	(pt 848 96)
+	(pt 864 96)
+)
+(connector
+	(text " mute" (rect 872 112 908 131)(font "Intel Clear" ))
+	(pt 848 128)
+	(pt 864 128)
+)

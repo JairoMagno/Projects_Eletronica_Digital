@@ -1,0 +1,38 @@
+TITLE "Debounce";
+
+SUBDESIGN debounce(
+	clock, botao_in 	: INPUT;
+	botao_out 			: OUTPUT;
+)
+
+VARIABLE
+	ff1, ff2, aux		: DFF;               --3 Flip flops D
+	contador[20..0]	: DFF;               --Um contador de 21 Bits(21 Flip flops D)
+	acionar_contador	: NODE;              --Variável intermediaria 
+
+BEGIN
+
+	ff1.clk = clock;
+	ff2.clk = clock;                       --O clock de todos os flips flops criados recebem o clock da placa         
+	aux.clk = clock;
+	contador[].clk = clock;       
+	
+	ff1.d = botao_in;                      --Entrada do flip flop igual ao botão
+	ff2.d = ff1.q;                         --Entrada do flip flop 2 recebe a saída do primeiro
+	acionar_contador = ff1.q XOR ff2.q;--O acionamento do contador será realizado através de uma operação XOR entre as saidas dos dois flip flops f.
+	botao_out = aux.q;                     --Meu botão de saída será a saída do flip flop auxiliar
+
+	IF(acionar_contador == 0) THEN
+	
+		IF(contador[] == 1500000) THEN      --Fornece 30ms de contagem para liberar o estado de entrada para saída
+			aux.d = ff2.q;                   --Operação de contagem. Quando a contagem chega 1.5M, zero a entrada do meu contador.
+			contador[].d = 0;
+		ELSE
+			contador[].d = contador[].q + 1; --Caso ainda não esteja em 1.5M, continua incrementando.
+			aux.d = aux.q;
+		END IF;
+		
+	ELSE
+		contador[].d = 0;                   --Se não for nenhum dos casos acima, minha entrada do contador será 0. XOR não está ativada.
+	END IF;
+END;

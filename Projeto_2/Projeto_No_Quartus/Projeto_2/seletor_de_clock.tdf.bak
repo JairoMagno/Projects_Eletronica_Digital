@@ -1,0 +1,34 @@
+TITLE "Seletor de Clock para as frequências do Buzzer";
+INCLUDE "divisor_de_clock.inc";
+
+CONSTANT clk_FPGA = 50000000; -- 50MHz
+
+--inicio do projeto
+SUBDESIGN seletor_de_clock(
+	clock			   :  INPUT;
+	sel[1..0]		:  INPUT; --2 Bits
+	clk_O			   :  OUTPUT;
+)
+
+VARIABLE                     --1, 2, 3, 4
+	fsm : MACHINE WITH STATES (s0,s1,s2,s3);
+	clock_1		: TFF; --Dividindo o clock da placa por um flipflop T
+	clock_025 	: divisor_de_clock WITH (overflow_f = 4, n_bits_f=LOG2(4)); --Dividindo por 4 através de 4 pulsos
+	clock_050 	: divisor_de_clock WITH (overflow_f = 2, n_bits_f=LOG2(2)); --Dividindo por 2 através de 2 pulsos
+
+
+BEGIN	
+	clock_1.t = VCC;
+	clock_1.clk = clock;
+	clock_025.clk_in = clock;
+	clock_050.clk_in = clock;
+
+	if sel[] == B"00" THEN clk_O = clock;
+	END if;
+	if sel[] == B"01" THEN clk_O = clock_1.q;
+	END IF;
+	if sel[] == B"10" THEN clk_O = clock_025.clk_out; --divisor de clock com overflow de 4 pulsos
+	END IF;
+	if sel[] == B"11" THEN clk_O = clock_050.clk_out; --divisor de clock com overflow de 2 pulsos
+	END IF;
+END;

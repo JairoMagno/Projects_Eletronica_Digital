@@ -1,0 +1,17 @@
+TITLE "Acionamento dos LEDs";
+
+SUBDESIGN leds
+(
+	sel_led[1..0] : INPUT;
+	led[3..0] : OUTPUT;
+)
+
+BEGIN
+	TABLE
+	sel_led[]	=>		led[];
+	B"00"			=> 	B"0111"	--25MHz
+	B"01"			=> 	B"1011"	--6,25MHz
+	B"10"			=> 	B"1101"	--12,5MHz
+	B"11"			=> 	B"1110"	--50MHz
+	END TABLE;
+END;

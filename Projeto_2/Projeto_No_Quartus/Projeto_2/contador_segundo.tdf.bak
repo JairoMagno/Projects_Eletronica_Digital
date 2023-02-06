@@ -1,0 +1,46 @@
+TITLE "contador segundo";
+
+SUBDESIGN contador_segundo(
+	clock  				: INPUT;				--clock da placa
+	enable 				: INPUT;				--ativar contador
+	clear  				: INPUT;				--zerar contador
+	q[3..0] 				: OUTPUT;			--vetor de 4 bits
+	min 					: OUTPUT;
+)
+
+VARIABLE 
+
+	contador[3..0] 	: DFF;				--contador de 4 bits (4 flip-flops)
+	aux 				 	: DFF;				--variável auxiliar  (1 flip-flop)
+
+
+begin
+
+	--entrada
+	contador[].clk 	= clock;
+	aux.clk 			= clock;
+	contador[].clrn	= NOT clear;
+	
+	--saída
+	q[]					= contador[].q;
+	min 					= aux.q;
+
+
+	IF enable THEN 
+		IF contador[].q == 9 THEN
+			contador[].d = 0;
+			aux 			 = VCC;
+			
+		ELSE 
+			contador[].d = contador[].q + 1;
+			aux 			 = GND;
+	
+	END IF; 
+	
+	
+	
+	ELSE 
+		contador[].d = contador[].q;
+		
+	END IF;
+END;

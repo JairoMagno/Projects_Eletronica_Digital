@@ -1,0 +1,39 @@
+TITLE "contador minuto";
+
+SUBDESIGN contador_minuto(
+	clock  				: INPUT;				--clock vindo do contador_dezena_segundo
+	enable 				: INPUT;				--ativar contador
+	clear  				: INPUT;				--zerar contador
+	q[3..0] 				: OUTPUT;			--vetor de 4 bits
+)
+
+VARIABLE 
+
+	contador[3..0] 	: DFF;				--contador de 4 bits (4 flip-flops)
+	aux 				 	: DFF;				--variável auxiliar  (1 flip-flop)
+
+BEGIN
+
+	--entrada
+	contador[].clk 	= clock;				--atribuindo o clock vindo do contador_dezena_segundo
+	aux.clk 				= clock;				--atribuindo o clock vindo do contador_dezena_segundo
+	contador[].clrn	= NOT clear;		--barrando todos os clear
+	
+	--saída
+	q[]					= contador[].q;	--mostrar o valor da contagem que está na sáida o flip flop
+
+	IF enable THEN 
+		IF contador[].q == 9 THEN			--verificar se o contador já chegou na sua representação máxima
+			contador[].d =  0;				--atribiu zero na entrada do contador
+			aux.d 		 = VCC;				--atribui o valor em VCC representando que o contador chegou a seu valor máximo
+			
+		ELSE 
+			contador[].d = contador[].q + 1;--enquanto não chegar em 9 a saída será incrementada
+			aux.d			 = GND;
+		END IF; 
+	
+	ELSE 
+		contador[].d = contador[].q;		 --caso o enable não seja ativado atribui a saída do contador na entrada
+	END IF;
+	
+END;

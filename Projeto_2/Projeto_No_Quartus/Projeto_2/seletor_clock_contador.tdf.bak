@@ -1,0 +1,42 @@
+TITLE "Seletor de clock do contador";
+INCLUDE "dividor_de_clock";
+
+
+CONSTANT clock_FPGA = 50000000; -- clock 50Mhz da placa
+
+--início do projeto
+SUBDESIGN seletor_clock_contador(
+	clock			   :  INPUT;
+	sel[1..0]		:  INPUT; --2 Bits
+	clk_O			   :  OUTPUT;
+)
+
+
+)
+
+VARIABLE 
+
+	fsm1: MACHINE WITH STATES (S0 , S1, S2, S3);
+	
+	clock_2		:  divisor_de_clock WITH (overflow_f = 625000, n_bits_f=LOG2(625000)); 
+	clock_1		:  divisor_de_clock WITH (overflow_f = 250000, n_bits_f=LOG2(250000)); 
+	clock_025 	:	divisor_de_clock WITH (overflow_f = 10000000, n_bits_f=LOG2(10000000)); 
+	clock_050 	: 	divisor_de_clock WITH (overflow_f = 500000, n_bits_f=LOG2(500000)); 
+	
+BEGIN
+
+	clock_2.clk_in = clock;
+	clock_1.clk_in = clock;
+	clock_025.clk_in = clock;
+	clock_050.clk_in = clock;
+	
+	if sel[] == B"00" THEN clk_O = clock_2.clk_out;
+	END if;
+	if sel[] == B"01" THEN clk_O = clock_1.clk_out;
+	END IF;
+	if sel[] == B"10" THEN clk_O = clock_025.clk_out; 
+	END IF;
+	if sel[] == B"11" THEN clk_O = clock_050.clk_out; 
+	END IF;
+END;
+	

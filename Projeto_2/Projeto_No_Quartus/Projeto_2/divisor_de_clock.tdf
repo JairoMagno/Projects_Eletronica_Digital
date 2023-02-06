@@ -1,0 +1,34 @@
+TITLE "Divisor de Clock";
+
+PARAMETERS(
+	overflow_f = 25000000,
+	n_bits_f   = 24
+);
+
+SUBDESIGN divisor_de_clock(
+	clk_in  : INPUT;				--Clock de entrada
+	clk_out : OUTPUT;				--Clock de saida já dividido
+)
+
+VARIABLE
+	q[n_bits_f..0]	: DFF;		--Contador
+	aux 				: DFF;		--TFF auxiliar
+		
+BEGIN
+	--Sincronizando os clocks
+	q[].clk = clk_in;
+	aux.clk = clk_in;	
+	
+	clk_out = aux.q;				--Clock de saida é a saida q do TFF, já dividido por conta do CASE:
+	
+	CASE q[].q IS
+		WHEN overflow_f =>      --Mudança de estado	
+			aux.d = VCC;			--Em 1 oscilação de clock, o Toggle fica em VCC
+			q[].d = 0;           --Zera o contador	
+			
+		WHEN OTHERS =>				--Enquanto não alcança o overflow_f, o contador vai incrementando		
+			aux.d = GND;			--Nos outros valores do contador, o Toggle fica em GND
+			q[].d = q[].q + 1;   --Incremento	
+			
+	END CASE;
+END;
