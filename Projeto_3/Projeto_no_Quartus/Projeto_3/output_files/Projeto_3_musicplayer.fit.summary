@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Sep 13 23:19:11 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : Projeto_3_musicplayer
+Top-level Entity Name : music_player_v2
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 1,773 / 6,272 ( 28 % )
+    Total combinational functions : 1,754 / 6,272 ( 28 % )
+    Dedicated logic registers : 589 / 6,272 ( 9 % )
+Total registers : 589
+Total pins : 33 / 92 ( 36 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

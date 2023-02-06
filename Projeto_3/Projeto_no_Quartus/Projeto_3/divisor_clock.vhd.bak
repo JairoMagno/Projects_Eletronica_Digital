@@ -1,0 +1,8 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
+ENTITY divisor_clock IS
+	PORT(
+	
+	);
+END divisor_clock;
