@@ -1,0 +1,37 @@
+TITLE "Seletor de Clock para as frequências do Buzzer";
+INCLUDE "divisor_de_clock.inc";
+
+SUBDESIGN seletor_de_clock(
+	clock			   :  INPUT;	  --Clock da placa
+	sel[1..0]		:  INPUT;	  --Frequencia selecionada (vinda do controle)
+	clk_O			   :  OUTPUT;	  --Clock selecionado e dividido (que vai para o buzzer)
+)
+
+VARIABLE
+	clock_1		: TFF; 			  --Dividindo o clock por 2 usando o Flip-Flop Toggle
+	clock_025 	: divisor_de_clock WITH (overflow_f = 4, n_bits_f=2); --Divisão de clock é feita no divisor_de_clock
+	clock_050 	: divisor_de_clock WITH (overflow_f = 2, n_bits_f=1); --Divisão de clock é feita no divisor_de_clock
+
+BEGIN
+	clock_1.t        = VCC;
+	--Sincronizando os clocks dos DFF
+	clock_1.clk      = clock;
+	clock_025.clk_in = clock;
+	clock_050.clk_in = clock;
+
+	if sel[] == B"00" THEN		  --1.0X
+		clk_O = clock_1.q;		  --Usa a saída q do TFF, tendo clock de 25MHz
+	END if;
+	
+	if sel[] == B"01" THEN		  --0.25X
+		clk_O = clock_025.clk_out;--Usa o clock dividido = 6,25MHz
+	END IF;
+	
+	if sel[] == B"10" THEN		  --0.5x
+		clk_O = clock_050.clk_out;--Usa o clock dividido = 12,5MHz
+	END IF;
+	
+	if sel[] == B"11" THEN		  --2.0x
+		clk_O = clock;				  --Usa o próprio clock da placa de 50MHz
+	END IF;
+END;

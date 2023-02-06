@@ -1,0 +1,29 @@
+TITLE "Debounce"
+
+SUBDESIGN debounce(
+	clock, botao_in 	: INPUT;
+	botao_out 			: OUTPUT;
+)
+
+VARIABLE(
+	ff1, ff2, aux		: DFF;
+	contador[18..0]	: DFF;
+	acionar_contador	: NODE;
+)
+
+BEGIN
+
+	ff1.clk = clock;
+	ff2.clk = clock;
+	aux.clk = clock;
+	contador[].clk = clock;
+	
+	ff1.d = botao_in;
+	ff2.d = ff1.q;
+	acionar_contador = ff1.q XOR ff2.q;
+
+	IF (acionar_contador == 0) THEN
+		
+	ELSE
+		contador[].d = 0;
+END

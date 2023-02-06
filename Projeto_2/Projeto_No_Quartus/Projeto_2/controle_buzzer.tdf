@@ -1,0 +1,14 @@
+TITLE "Controle do Buzzer";
+
+SUBDESIGN controle_buzzer(
+	buzzer_in  : INPUT;
+	mute       : INPUT; 
+	buzzer_out : OUTPUT;
+)
+
+BEGIN 
+
+	-- Buzzer só é acionado quando o mute está desacionado. Linguagem interpreta o nivel lógico ao contrário.
+	buzzer_out = mute AND buzzer_in;
+
+END;

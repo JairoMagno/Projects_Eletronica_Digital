@@ -1,0 +1,103 @@
+TITLE "Controlador";
+INCLUDE "gerar_pulso.inc";	
+
+SUBDESIGN controle(
+	clock											:	INPUT;	--Clock da placa
+	Play_in, Stop_in, Freq_in				:	INPUT;	--Sinais de entrada vindos do debouncer (botoes 1, 2 e 3)
+	Play_out, Stop_out, Freq_out[1..0]	:	OUTPUT;	--Sinais de saida que vao para o buzzer
+)
+
+VARIABLE
+	--Maquinas de estado
+	FSM1	:	MACHINE WITH STATES(S1, S2, S3, S4); 	--Maquina de estado das frequencias do buzzer
+	FSM2 	:	MACHINE WITH STATES(P1, P2, P3);			--Maquina de estado do stop e play/pause
+	
+	--Objetos de pulso
+	Play_objt	:	gerar_pulso;				
+	Freq_objt	:	gerar_pulso;
+	Stop_objt	:	gerar_pulso;
+	
+	--Nós intermediarios (auxiliares)
+	Play_pulso	:	NODE;
+	Freq_pulso	:	NODE;
+	Stop_pulso	:	NODE;
+
+BEGIN
+	--Sincronismo
+	FSM1.clk = clock;
+	FSM2.clk = clock;
+	Play_objt.clock = clock;
+	Freq_objt.clock = clock;
+	Stop_objt.clock = clock;
+	
+	--Garante um pulso em vez de sinal contínuo
+	Play_objt.botao = Play_in;
+	Freq_objt.botao = Freq_in;
+	Stop_objt.botao = Stop_in;
+	Play_pulso = Play_objt.pulso;
+	Freq_pulso = Freq_objt.pulso;
+	Stop_pulso = Stop_objt.pulso;
+	
+	CASE FSM1 IS		--Máquina da frequência
+		WHEN S1 =>
+			Freq_out[] = B"11";	--2.0x:  Quando esse estado recebe um pulso, muda para o próximo que é 1.0x
+			IF(Freq_pulso) THEN
+				FSM1 = S2;
+			END IF;
+			
+		WHEN S2 =>
+			Freq_out[] = B"00";	--1.0x:  Quando esse estado recebe um pulso, muda para o próximo que é 0.25x
+			IF(Freq_pulso) THEN
+				FSM1 = S3;
+			END IF;
+			
+		WHEN S3 =>
+			Freq_out[] = B"01";	--0.25x: Quando esse estado recebe um pulso, muda para o próximo que é 0.5x
+			IF(Freq_pulso) THEN
+				FSM1 = S4;
+			END IF;
+			
+		WHEN S4 =>
+			Freq_out[] = B"10";	--0.50x: Quando esse estado recebe um pulso, muda para o próximo que é 2.0x
+			IF(Freq_pulso) THEN
+				FSM1 = S1;
+			END IF;	
+	END CASE;
+	
+	CASE FSM2 IS		--Máquina do stop e play/pause	
+		--stop (reset)
+		WHEN P2 =>
+			Stop_out = VCC;		--Stop em VCC significa que a musica foi resetada
+			Play_out = GND;		--Play em GND significa que a musica está pausada
+			
+			IF(Play_pulso) THEN	--Se esse estado recebe um pulso vindo do botao 1, muda para o play (estado P3).
+				FSM2 = P3;
+			END IF;
+			
+		--play
+		WHEN P3 =>
+			Stop_out = GND;		--Stop em GND significa que a musica não está sendo resetada
+			Play_out = VCC;		--Play em VCC significa que a musica não está pausada
+			
+			IF(Play_pulso) THEN	--Se esse estado recebe um pulso vindo do botao 1, muda para o pause (estado P1).
+				FSM2 = P1;
+			END IF;
+			
+			IF(Stop_pulso) THEN	--Se esse estado recebe um pulso vindo do botao 2, muda para o stop (ou reset, estado P2).
+				FSM2 = P2;
+			END IF;
+		
+		--pausado
+		WHEN P1 =>
+			Stop_out = GND;		--Stop em GND significa que a musica não está sendo resetada
+			Play_out = GND;		--Play em GND significa que a musica está pausada
+			
+			IF(Play_pulso) THEN	--Se esse estado recebe um pulso vindo do botao 1, muda para o play (estado P3).
+				FSM2 = P3;
+			END IF;
+			
+			IF(Stop_pulso) THEN	--Se esse estado recebe um pulso vindo do botao 2, muda para o stop (ou reset, estado P2).
+				FSM2 = P2;
+			END IF;
+	END CASE;
+END;

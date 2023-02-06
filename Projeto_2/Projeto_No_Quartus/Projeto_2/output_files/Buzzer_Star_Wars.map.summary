@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Aug 31 12:43:13 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : Buzzer_Star_Wars
+Top-level Entity Name : Buzzer_Star_Wars
+Family : Cyclone IV E
+Total logic elements : 641
+    Total combinational functions : 625
+    Dedicated logic registers : 390
+Total registers : 390
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

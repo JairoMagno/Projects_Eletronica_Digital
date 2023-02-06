@@ -1,0 +1,28 @@
+TITLE "Gerar Pulso";		--Gera um pulso a partir do sinal que vem do controle
+
+SUBDESIGN gerar_pulso(		
+	clock	:	INPUT;		--clock da placa	
+	botao	:	INPUT;		--sinal que vem de um botao (debouncer=>controle=>gerar_pulso)
+	pulso	:	OUTPUT;		--saida de 1 pulso para o controle
+)
+
+VARIABLE
+	--Flip-flops D de armazenamento de estado
+	FF1	:	DFF;		--armazena o estado atual
+	FF2	:	DFF;		--armazena o estado anterior
+
+BEGIN
+	--Sincronismo
+	FF1.clk = clock;	
+	FF2.clk = clock;	
+	
+	--Nós internos
+	FF1.d = botao;		--atualiza o estado atual
+	FF2.d = FF1.q;		--atualiza o estado anterior
+	
+	--Gera um pulso de clock quando o estado anterior for LOW e o atual for HIGH
+	--Ou seja, apenas na borda de subida do botao
+	
+	--Pulso de saida
+	pulso = (NOT FF1.q) NOR FF2.q;
+END;

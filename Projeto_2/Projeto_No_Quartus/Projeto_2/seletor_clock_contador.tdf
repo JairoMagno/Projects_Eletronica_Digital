@@ -1,0 +1,33 @@
+TITLE "Seletor de clock do contador";--Seleciona a frequência do contador
+INCLUDE "divisor_de_clock.inc";
+
+SUBDESIGN seletor_clock_contador(
+	clock			   :  INPUT;			 --Clock da placa
+	sel[1..0]		:  INPUT;			 --Frequencia selecionada no controle
+	clk_O			   :  OUTPUT;			 --Frequência de entrada no contador_decimo_segundo
+)
+
+VARIABLE 
+	
+	clock_2		:  divisor_de_clock WITH (overflow_f = 1250000, n_bits_f=LOG2(1250000)); 	--Divisão de clock é feita no divisor_de_clock
+	clock_1		:  divisor_de_clock WITH (overflow_f = 2500000, n_bits_f=LOG2(2500000)); 	--Divisão de clock é feita no divisor_de_clock
+	clock_025 	:	divisor_de_clock WITH (overflow_f = 10000000, n_bits_f=LOG2(10000000)); --Divisão de clock é feita no divisor_de_clock
+	clock_050 	: 	divisor_de_clock WITH (overflow_f = 5000000, n_bits_f=LOG2(5000000)); 	--Divisão de clock é feita no divisor_de_clock
+	
+BEGIN
+	--Sincronizando os clocks
+	clock_2.clk_in   = clock;
+	clock_1.clk_in   = clock;
+	clock_025.clk_in = clock;
+	clock_050.clk_in = clock;
+	
+	if sel[] == B"00" THEN clk_O = clock_1.clk_out;		--1.0x
+	END if;
+	if sel[] == B"01" THEN clk_O = clock_025.clk_out;	--0.25x
+	END IF;
+	if sel[] == B"10" THEN clk_O = clock_050.clk_out; 	--0.50x
+	END IF;
+	if sel[] == B"11" THEN clk_O = clock_2.clk_out; 	--2.0x
+	END IF;
+END;
+	

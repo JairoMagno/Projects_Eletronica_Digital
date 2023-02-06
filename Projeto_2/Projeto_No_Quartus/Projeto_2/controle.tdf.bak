@@ -1,0 +1,111 @@
+TITLE "Controlador";
+INCLUDE "gerar_pulso.inc";
+
+SUBDESIGN controlador(
+	clock											:	INPUT;
+	Play_in, Stop_in, Freq_in				:	INPUT;
+	Play_out, Stop_out, Freq_out[1..0]	:	OUTPUT;
+)
+
+VARIABLE
+	--Maquinas de estado
+	FSM1	:	MACHINE WITH STATES(S1, S2, S3, S4); 	--Atribui 00, 01, 10, 11
+	FSM2 	:	MACHINE WITH STATES(P1, P2, P3);				--Atribui 0, 1
+	
+	--Objetos de pulso
+	Play_objt	:	gerar_pulso;
+	Freq_objt	:	gerar_pulso;
+	Stop_objt	:	gerar_pulso;
+	
+	--Nós intermediarios
+	Play_pulso	:	NODE;
+	Freq_pulso	:	NODE;
+	Stop_pulso	:	NODE;
+	estado : DFF;
+
+BEGIN
+
+	--Sincronismo
+	FSM1.clk = clock;
+	FSM2.clk = clock;
+	Play_objt.clock = clock;
+	Freq_objt.clock = clock;
+	Stop_objt.clock = clock;
+	
+	--Gerar um pulso em vez de algo contínuo
+	Play_objt.botao = Play_in;
+	Freq_objt.botao = Freq_in;
+	Stop_objt.botao = Stop_in;
+	Play_pulso = Play_objt.pulso;
+	Freq_pulso = Freq_objt.pulso;
+	Stop_pulso = Stop_objt.pulso;
+
+	--Máquina da frequência
+	CASE FSM1 IS
+	
+		WHEN S1 =>
+			Freq_out[] = B"00";
+			IF(Freq_pulso) THEN
+				FSM1 = S2;
+			END IF;
+			
+		WHEN S2 =>
+			Freq_out[] = B"01";
+			IF(Freq_pulso) THEN
+				FSM1 = S3;
+			END IF;
+			
+		WHEN S3 =>
+			Freq_out[] = B"10";
+			IF(Freq_pulso) THEN
+				FSM1 = S4;
+			END IF;
+			
+		WHEN S4 =>
+			Freq_out[] = B"11";
+			IF(Freq_pulso) THEN
+				FSM1 = S1;
+			END IF;
+			
+	END CASE;
+	
+	--Máquina do stop e play/pause
+	CASE FSM2 IS
+					
+		--SIM STOP e NÃO PLAY
+		WHEN P1 =>
+			Stop_out = VCC;
+			Play_out = GND;
+			
+			IF(Play_pulso) THEN
+				FSM2 = P2;
+			END IF;
+			
+		--NÃO STOP e SIM PLAY
+		WHEN P2 =>
+			Stop_out = GND;
+			Play_out = VCC;
+			
+			IF(Play_pulso) THEN
+				FSM2 = P3;
+			END IF;
+			
+			IF(Stop_pulso) THEN
+				FSM2 = P1;
+			END IF;
+		
+		--NÃO STOP e NÃO PLAY
+		WHEN P3 =>
+			Stop_out = GND;
+			Play_out = GND;
+			
+			IF(Play_pulso) THEN
+				FSM2 = P2;
+			END IF;
+			
+			IF(Stop_pulso) THEN
+				FSM2 = P1;
+			END IF;
+		
+	END CASE;
+END;

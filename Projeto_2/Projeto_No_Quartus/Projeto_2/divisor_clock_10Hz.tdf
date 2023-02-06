@@ -1,0 +1,31 @@
+TITLE "Divisor de Clock 10Hz";
+
+--período 0,1 segundo =  frequência de 10Hz
+--conta 2,5M pulsos(nível alto)+2,5M pulsos(nível baixo) a 50MHz
+--resultando num clock de 10Hz ou período de 0,1s
+
+CONSTANT overflow_f = 2500000; 
+CONSTANT n_bits_f   = LOG2(overflow_f);
+
+SUBDESIGN divisor_clock_10Hz
+(
+	clk_in					: INPUT;  --entrada com freq de clk_FPGA
+	clk_out				: OUTPUT; --saída com a freq desejada 	 
+)
+VARIABLE
+	cnt[n_bits_f..0] 	: DFF;    --instancia de DFF
+	alt 		         : TFF;    --instancia de TFF
+	
+BEGIN
+	cnt[].clk	=	clk_in;
+	alt.clk		=	clk_in;
+	
+	IF cnt[]    == 0 THEN       --reinicia o cnt		
+		cnt[].d  = overflow_f;   --valor inicial		
+		alt.t    = VCC;          --alterna a saída alt.q
+		
+	ELSE                        --contador DOWN
+		cnt[].d  = cnt[] - 1;    --decrementa
+	END IF;	
+	clk_out     = alt;          --atribui alt.q a clk_out
+END;

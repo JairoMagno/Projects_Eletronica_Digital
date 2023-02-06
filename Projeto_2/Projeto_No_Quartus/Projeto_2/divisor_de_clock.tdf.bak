@@ -1,0 +1,29 @@
+TITLE "Divisor de Clock";
+
+PARAMETERS(
+	overflow_f = 25000000,
+	n_bits_f   = 24
+);
+
+SUBDESIGN divisor_de_clock(
+	clk_in  : INPUT;
+	clk_out : OUTPUT;
+)
+
+VARIABLE
+	q[n_bits_f..0]	: DFF; 
+	aux 				: TFF;	
+		
+BEGIN
+	q[].clk = clk_in;
+	aux.clk = clk_in;	
+	clk_out = aux.q;
+	CASE q[].q IS
+		WHEN overflow_f => --mudança de estado	
+			aux.t = VCC;			
+			q[].d = 0; --zera o contador		
+		WHEN OTHERS =>						
+			aux.t = GND;						
+			q[].d = q[].q + 1; -- incremento		
+		END CASE;
+END;

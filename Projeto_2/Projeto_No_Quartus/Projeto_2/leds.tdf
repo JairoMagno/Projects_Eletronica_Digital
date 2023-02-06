@@ -1,0 +1,17 @@
+TITLE "Acionamento dos LEDs";
+
+SUBDESIGN leds
+(
+	sel_led[1..0]  : INPUT;		--É qual frequência foi selecionada (no controle)
+	led[3..0] 		: OUTPUT;	--Pinos da placa
+)
+
+BEGIN
+	TABLE
+	sel_led[]	=>		led[];
+	B"00"			=> 	B"0111";	--25MHz 	 (1.0x)
+	B"01"			=> 	B"1011";	--6,25MHz (0.25x)
+	B"10"			=> 	B"1101";	--12,5MHz (0.50x)
+	B"11"			=> 	B"1110";	--50MHz	 (2.0x)
+	END TABLE;
+END;

@@ -1,0 +1,73 @@
+TITLE "Multiplexador";
+
+SUBDESIGN	mux(
+	clock_in		  : INPUT;	--clock da placa
+	dec_sec[3..0] : INPUT;	--décimo de segundo
+	sec[3..0] 	  : INPUT;	--segundos
+	dez_sec[3..0] : INPUT;	--dezena de segundo
+	min[3..0] 	  : INPUT;	--minutos
+	
+	dig_7seg[7..0]: OUTPUT;	--7 segmentos do display + ponto
+	sel_disp[3..0]: OUTPUT;	--seletor de display
+)
+
+VARIABLE
+	ff[12..0] 	  : DFF;		--contador
+	auxf[1..0]	  : DFF;		--referente ao seletor de display
+	aux[1..0]	  : NODE;	--
+	num[3..0]     : NODE;
+
+BEGIN
+	ff[].clk  = clock_in;
+	auxf[].clk = clock_in;
+	aux[] = auxf[];
+	
+	CASE ff[].q IS
+			WHEN 5000 	=>			--10KHz
+					IF auxf[].q == 3 THEN 		 --reseta o seletor
+						auxf[].d =  0;
+					ELSE
+						auxf[].d = auxf[].q + 1; --incrementa o seletor
+					END IF;
+					
+					ff[].d=0; 						 --zera o contador de 5000			
+					
+			WHEN OTHERS =>			
+					ff[].d = ff[].q + 1; 		 --conta até 5000
+					auxf[].d = auxf[].q;
+	END CASE;
+
+	CASE  aux[] 		IS 	--alterna os digitos de display a partir do aux
+			WHEN B"00" 	=>    sel_disp[] = B"0111";
+									num[] = min[];
+									dig_7seg[0] = GND;
+								
+			WHEN B"01" 	=>		sel_disp[] = B"1011";
+									num[] = dez_sec[];
+									dig_7seg[0] = VCC;
+								
+			WHEN B"10" 	=>		sel_disp[] = B"1101";
+									num[] = sec[];
+									dig_7seg[0] = GND;
+								
+			WHEN B"11" 	=>		sel_disp[] = B"1110";
+									num[] = dec_sec[];
+									dig_7seg[0] = VCC;
+	END CASE;
+
+	--Tabela verdade display de 7 segmentos
+	TABLE
+			num[]			=>		dig_7seg[7..1];
+			B"0000" 		=>		B"0000001";
+			B"0001" 		=>		B"1001111";
+			B"0010" 		=>		B"0010010";
+			B"0011" 		=>		B"0000110";
+			B"0100" 		=>		B"1001100";
+			B"0101" 		=>		B"0100100";
+			B"0110" 		=>		B"0100000";
+			B"0111" 		=>		B"0001111";
+			B"1000" 		=>		B"0000000";
+			B"1001" 		=>		B"0000100";
+	END TABLE;
+
+END;
