@@ -1,0 +1,81 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.all;
+
+ENTITY controle IS 
+	 PORT(clk_in											:	IN  std_logic;
+			play_in, sel_in, stop_in					:	IN  std_logic;
+			
+			play_out, stop_out 							:	OUT std_logic;
+			sel_out 											:  OUT std_logic_vector (1 DOWNTO 0)
+		);
+END controle;
+
+ARCHITECTURE bhv OF controle IS 
+	TYPE FSM IS (s0, s1, s2);			--Criando a maquina de estados, s0 = stop, s1 = play, s2 = pause.
+	
+	COMPONENT gera_pulso
+		PORT
+		(clk_in		 		 : IN  std_logic;
+		 botao_pulso 		 : IN  std_logic;
+		 pulso			 	 : OUT std_logic;
+		);
+		END COMPONENT;
+		
+	--SIGNAL saida_controle 				  : std_logic_vector (3 DOWNTO 1);
+	SIGNAL pulsoB1, pulsoB2, pulsoB3   : std_logic;
+	SIGNAL selec                       : std_logic_vector (1 DOWNTO 0) := "00";
+
+
+BEGIN 
+	--Usando o componente 
+	gp2 :  PORT MAP (clk_in => clk_in, botao_pulso => play_in, pulso => pulsoB2); 
+	gp3 :  PORT MAP (clk_in => clk_in, botao_pulso => sel_in,  pulso => pulsoB3); 
+	gp4 :  PORT MAP (clk_in => clk_in, botao_pulso => stop_in, pulso => pulsoB4); 
+	
+	PROCESS(clk)
+	VARIABLE maquina1 					: FSM;
+	BEGIN
+	IF rising_edge(clk)	THEN
+		CASE maquina1 IS
+			WHEN s0 IS =>				--Stop (reset) -> recebe sinal do botao 2 (play) e do botao 3 (trocar de musica)
+				IF    (pulsoB2) = '0' THEN 
+					maquina1 := s1;
+					
+				ELSIF (pulsoB3) = '0' THEN
+					IF    selec = "00" THEN	selec <= "01";
+					ELSIF selec = "01" THEN selec <= "00";
+					END IF;
+					
+				END IF;
+	
+			WHEN s1 IS =>				--Play
+				IF    (pulsoB2) = '0' THEN
+					maquina1 := s2;
+				
+				ELSIF (pulsoB4) = '0' THEN
+					maquina1 := s0;
+				
+				END IF;
+			
+			WHEN s2 IS =>				--Pause	
+				IF    (pulsoB2) = '0' THEN
+					maquina1 := s1;
+				
+				ELSIF (pulsoB4) = '0' THEN
+					maquina1 := s0;
+				
+				END IF;
+		END CASE;
+	END IF;
+	
+	CASE maquina1 IS
+		WHEN s0	  =>		play_out <= '0'; stop_out <= '1';
+		WHEN s1	  =>		play_out <= '1'; stop_out <= '0';
+		WHEN s2	  =>		play_out <= '0'; stop_out <= '0';
+	END CASE;
+	END PROCESS;
+	
+	sel_out <= selec;
+	
+END bhv;

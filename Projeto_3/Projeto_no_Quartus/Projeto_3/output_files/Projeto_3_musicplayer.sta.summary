@@ -1,0 +1,221 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : -14.197
+TNS   : -995.560
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -9.545
+TNS   : -2609.424
+
+Type  : Slow 1200mV 85C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -9.273
+TNS   : -506.368
+
+Type  : Slow 1200mV 85C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -4.627
+TNS   : -137.027
+
+Type  : Slow 1200mV 85C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -1.710
+TNS   : -49.667
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.190
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : 0.575
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 0.963
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : -5.143
+TNS   : -390.414
+
+Type  : Slow 1200mV 85C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -1.884
+TNS   : -43.676
+
+Type  : Slow 1200mV 85C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -0.517
+TNS   : -3.145
+
+Type  : Slow 1200mV 85C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -1.735
+TNS   : -76.711
+
+Type  : Slow 1200mV 85C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : 0.196
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 2.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -829.772
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -1.487
+TNS   : -49.071
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : 0.240
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : -13.418
+TNS   : -937.570
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -8.872
+TNS   : -2391.674
+
+Type  : Slow 1200mV 0C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -8.711
+TNS   : -473.985
+
+Type  : Slow 1200mV 0C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -4.278
+TNS   : -126.198
+
+Type  : Slow 1200mV 0C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -1.823
+TNS   : -63.721
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.127
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : 0.688
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 0.848
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : -5.026
+TNS   : -380.833
+
+Type  : Slow 1200mV 0C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -1.730
+TNS   : -39.794
+
+Type  : Slow 1200mV 0C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -0.601
+TNS   : -5.490
+
+Type  : Slow 1200mV 0C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -1.729
+TNS   : -79.658
+
+Type  : Slow 1200mV 0C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : 0.266
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 2.236
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -829.772
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -1.487
+TNS   : -49.071
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : -0.065
+TNS   : -2.340
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : 0.016
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : -5.576
+TNS   : -369.314
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -3.727
+TNS   : -841.811
+
+Type  : Fast 1200mV 0C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -3.640
+TNS   : -188.263
+
+Type  : Fast 1200mV 0C Model Setup 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -1.341
+TNS   : -37.197
+
+Type  : Fast 1200mV 0C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -0.645
+TNS   : -14.245
+
+Type  : Fast 1200mV 0C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : 0.033
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.062
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : -2.042
+TNS   : -148.436
+
+Type  : Fast 1200mV 0C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -0.323
+TNS   : -2.323
+
+Type  : Fast 1200mV 0C Model Recovery 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -0.225
+TNS   : -1.311
+
+Type  : Fast 1200mV 0C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : -0.332
+TNS   : -8.286
+
+Type  : Fast 1200mV 0C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -0.035
+TNS   : -0.035
+
+Type  : Fast 1200mV 0C Model Removal 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 1.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -600.288
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|aux'
+Slack : -1.000
+TNS   : -33.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]'
+Slack : 0.296
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1'
+Slack : 0.337
+TNS   : 0.000
+
+------------------------------------------------------------

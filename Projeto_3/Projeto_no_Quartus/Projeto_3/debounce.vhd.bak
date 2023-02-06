@@ -1,0 +1,42 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
+ENTITY debounce IS
+GENERIC(
+	cont	   : NATURAL := 500_000
+);
+
+PORT(
+	clk 		: IN  std_logic;
+	botao 	: IN  std_logic;
+	output	: OUT std_logic
+);
+END debounce;
+
+ARCHITECTURE deb OF debounce IS		--SIGNAL SÃO COMO AS VARIÁVEIS
+	SIGNAL contador: std_logic;
+	SIGNAL ff  		: std_logic_vector(1 DOWNTO 0);
+	SIGNAL aux 		: std_logic;
+
+BEGIN
+PROCESS (clk)
+
+	BEGIN		
+		aux <= ff(0) XOR ff(1);
+	
+		IF rising_edge(clk) THEN
+		
+			ff(0) <= botao;
+			ff(1) <= ff(0);
+			
+			IF aux = '1' THEN
+				contador <= 0;
+			ELSIF (cont < delay) THEN
+				cont <= cont + 1;
+			ELSE
+				output <= ff(1);
+			END IF;
+			
+		END IF;
+	END PROCESS;
+END deb;

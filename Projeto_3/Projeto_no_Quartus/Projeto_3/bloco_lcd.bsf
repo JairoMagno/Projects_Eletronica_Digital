@@ -1,0 +1,72 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 288 144)
+	(text "bloco_lcd" (rect 5 0 87 23)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 103 35 124)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock_in" (rect 0 0 68 23)(font "Intel Clear" (font_size 8)))
+		(text "clock_in" (rect 21 27 89 50)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "selecao_in" (rect 0 0 88 23)(font "Intel Clear" (font_size 8)))
+		(text "selecao_in" (rect 21 43 109 66)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 272 32)
+		(output)
+		(text "lcd_rw_out" (rect 0 0 94 23)(font "Intel Clear" (font_size 8)))
+		(text "lcd_rw_out" (rect 157 27 251 50)(font "Intel Clear" (font_size 8)))
+		(line (pt 272 32)(pt 256 32))
+	)
+	(port
+		(pt 272 48)
+		(output)
+		(text "lcd_rs_out" (rect 0 0 88 23)(font "Intel Clear" (font_size 8)))
+		(text "lcd_rs_out" (rect 163 43 251 66)(font "Intel Clear" (font_size 8)))
+		(line (pt 272 48)(pt 256 48))
+	)
+	(port
+		(pt 272 64)
+		(output)
+		(text "lcd_ena_out" (rect 0 0 103 23)(font "Intel Clear" (font_size 8)))
+		(text "lcd_ena_out" (rect 148 59 251 82)(font "Intel Clear" (font_size 8)))
+		(line (pt 272 64)(pt 256 64))
+	)
+	(port
+		(pt 272 80)
+		(output)
+		(text "lcd_d_out[7..0]" (rect 0 0 127 23)(font "Intel Clear" (font_size 8)))
+		(text "lcd_d_out[7..0]" (rect 124 75 251 98)(font "Intel Clear" (font_size 8)))
+		(line (pt 272 80)(pt 256 80)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 256 112))
+	)
+)

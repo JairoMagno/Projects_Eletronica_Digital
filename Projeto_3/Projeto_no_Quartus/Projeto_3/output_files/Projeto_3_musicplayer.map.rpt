@@ -1,0 +1,1080 @@
+Analysis & Synthesis report for Projeto_3_musicplayer
+Tue Sep 13 23:19:02 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |music_player_v2|bloco_lcd:inst13|Controle_LCD:inst8|estado
+  9. State Machine - |music_player_v2|controle:inst1|maquina1
+ 10. State Machine - |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|estado_atual
+ 11. State Machine - |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|estado_atual
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: debouncers:inst|debounce:d1
+ 19. Parameter Settings for User Entity Instance: debouncers:inst|debounce:d2
+ 20. Parameter Settings for User Entity Instance: debouncers:inst|debounce:d3
+ 21. Parameter Settings for User Entity Instance: debouncers:inst|debounce:d4
+ 22. Parameter Settings for User Entity Instance: bloco_lcd:inst13|Controle_LCD:inst8
+ 23. Port Connectivity Checks: "bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1"
+ 24. Port Connectivity Checks: "bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle"
+ 25. Port Connectivity Checks: "bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Sep 13 23:19:02 2022       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; Projeto_3_musicplayer                       ;
+; Top-level Entity Name              ; music_player_v2                             ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,770                                       ;
+;     Total combinational functions  ; 1,752                                       ;
+;     Dedicated logic registers      ; 589                                         ;
+; Total registers                    ; 589                                         ;
+; Total pins                         ; 33                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                 ;
++------------------------------------------------------------------+--------------------+-----------------------+
+; Option                                                           ; Setting            ; Default Value         ;
++------------------------------------------------------------------+--------------------+-----------------------+
+; Device                                                           ; EP4CE6E22C8        ;                       ;
+; Top-level entity name                                            ; music_player_v2    ; Projeto_3_musicplayer ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V             ;
+; Use smart compilation                                            ; Off                ; Off                   ;
+; Maximum processors allowed for parallel compilation              ; All                ; All                   ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                    ;
+; Enable compact report table                                      ; Off                ; Off                   ;
+; Restructure Multiplexers                                         ; Auto               ; Auto                  ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                   ;
+; Preserve fewer node names                                        ; On                 ; On                    ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable                ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001          ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993             ;
+; State Machine Processing                                         ; Auto               ; Auto                  ;
+; Safe State Machine                                               ; Off                ; Off                   ;
+; Extract Verilog State Machines                                   ; On                 ; On                    ;
+; Extract VHDL State Machines                                      ; On                 ; On                    ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                   ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000                  ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                   ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                    ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                    ;
+; Parallel Synthesis                                               ; On                 ; On                    ;
+; DSP Block Balancing                                              ; Auto               ; Auto                  ;
+; NOT Gate Push-Back                                               ; On                 ; On                    ;
+; Power-Up Don't Care                                              ; On                 ; On                    ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                   ;
+; Remove Duplicate Registers                                       ; On                 ; On                    ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                   ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                   ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                   ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                   ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                   ;
+; Ignore SOFT Buffers                                              ; On                 ; On                    ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                   ;
+; Optimization Technique                                           ; Balanced           ; Balanced              ;
+; Carry Chain Length                                               ; 70                 ; 70                    ;
+; Auto Carry Chains                                                ; On                 ; On                    ;
+; Auto Open-Drain Pins                                             ; On                 ; On                    ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                   ;
+; Auto ROM Replacement                                             ; On                 ; On                    ;
+; Auto RAM Replacement                                             ; On                 ; On                    ;
+; Auto DSP Block Replacement                                       ; On                 ; On                    ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto                  ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto                  ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                    ;
+; Strict RAM Replacement                                           ; Off                ; Off                   ;
+; Allow Synchronous Control Signals                                ; On                 ; On                    ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                   ;
+; Auto RAM Block Balancing                                         ; On                 ; On                    ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                   ;
+; Auto Resource Sharing                                            ; Off                ; Off                   ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                   ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                   ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                   ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                    ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                   ;
+; Timing-Driven Synthesis                                          ; On                 ; On                    ;
+; Report Parameter Settings                                        ; On                 ; On                    ;
+; Report Source Assignments                                        ; On                 ; On                    ;
+; Report Connectivity Checks                                       ; On                 ; On                    ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                   ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                     ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation    ;
+; HDL message level                                                ; Level2             ; Level2                ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                   ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000                  ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000                  ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                   ;
+; Clock MUX Protection                                             ; On                 ; On                    ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                   ;
+; Block Design Naming                                              ; Auto               ; Auto                  ;
+; SDC constraint protection                                        ; Off                ; Off                   ;
+; Synthesis Effort                                                 ; Auto               ; Auto                  ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                    ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                   ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium                ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto                  ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                    ;
++------------------------------------------------------------------+--------------------+-----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                           ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; debounce.vhd                     ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debounce.vhd                 ;         ;
+; music_player_v2.bdf              ; yes             ; User Block Diagram/Schematic File  ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/music_player_v2.bdf          ;         ;
+; gera_pulso.vhd                   ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/gera_pulso.vhd               ;         ;
+; divisor_clock.vhd                ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/divisor_clock.vhd            ;         ;
+; debouncers.vhd                   ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd               ;         ;
+; controle.vhd                     ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/controle.vhd                 ;         ;
+; seletor_de_musica.vhd            ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_musica.vhd        ;         ;
+; FrereJacques.vhd                 ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd             ;         ;
+; OverTheRainbow.vhd               ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd           ;         ;
+; leds.vhd                         ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/leds.vhd                     ;         ;
+; temporizador.vhd                 ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/temporizador.vhd             ;         ;
+; estrutura_FrereJacques.vhd       ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_FrereJacques.vhd   ;         ;
+; estrutura_OverTheRainbow.vhd     ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_OverTheRainbow.vhd ;         ;
+; seletor_de_buzzer.vhd            ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_buzzer.vhd        ;         ;
+; Mute.vhd                         ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Mute.vhd                     ;         ;
+; contador_assincrono.vhd          ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd      ;         ;
+; Controle_LCD.vhd                 ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Controle_LCD.vhd             ;         ;
+; Logica_LCD.vhd                   ; yes             ; User VHDL File                     ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Logica_LCD.vhd               ;         ;
+; bloco_musicas_e_mute.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/bloco_musicas_e_mute.bdf     ;         ;
+; bloco_displays_e_leds.bdf        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/bloco_displays_e_leds.bdf    ;         ;
+; bloco_lcd.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/bloco_lcd.bdf                ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 1,770       ;
+;                                             ;             ;
+; Total combinational functions               ; 1752        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 698         ;
+;     -- 3 input functions                    ; 284         ;
+;     -- <=2 input functions                  ; 770         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 1262        ;
+;     -- arithmetic mode                      ; 490         ;
+;                                             ;             ;
+; Total registers                             ; 589         ;
+;     -- Dedicated logic registers            ; 589         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 33          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 325         ;
+; Total fan-out                               ; 6583        ;
+; Average fan-out                             ; 2.73        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Entity Name              ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------------------+--------------+
+; |music_player_v2                       ; 1752 (0)            ; 589 (0)                   ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |music_player_v2                                                                                    ; music_player_v2          ; work         ;
+;    |bloco_displays_e_leds:inst12|      ; 668 (0)             ; 145 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_displays_e_leds:inst12                                                       ; bloco_displays_e_leds    ; work         ;
+;       |contador_assincrono:inst6|      ; 667 (595)           ; 145 (113)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_displays_e_leds:inst12|contador_assincrono:inst6                             ; contador_assincrono      ; work         ;
+;          |divisor_clock:D1|            ; 72 (72)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1            ; divisor_clock            ; work         ;
+;       |leds:inst2|                     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_displays_e_leds:inst12|leds:inst2                                            ; leds                     ; work         ;
+;    |bloco_lcd:inst13|                  ; 325 (0)             ; 64 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_lcd:inst13                                                                   ; bloco_lcd                ; work         ;
+;       |Controle_LCD:inst8|             ; 184 (184)           ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_lcd:inst13|Controle_LCD:inst8                                                ; Controle_LCD             ; work         ;
+;       |logica_LCD:inst7|               ; 141 (141)           ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_lcd:inst13|logica_LCD:inst7                                                  ; logica_LCD               ; work         ;
+;    |bloco_musicas_e_mute:inst11|       ; 455 (0)             ; 233 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11                                                        ; bloco_musicas_e_mute     ; work         ;
+;       |Mute:inst13|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|Mute:inst13                                            ; Mute                     ; work         ;
+;       |estrutura_FrereJacques:inst|    ; 229 (0)             ; 121 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst                            ; estrutura_FrereJacques   ; work         ;
+;          |FrereJacques:controle|       ; 69 (69)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle      ; FrereJacques             ; work         ;
+;          |divisor_clock:div_clk|       ; 85 (85)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|divisor_clock:div_clk      ; divisor_clock            ; work         ;
+;          |temporizador:temp|           ; 75 (75)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|temporizador:temp          ; temporizador             ; work         ;
+;       |estrutura_OverTheRainbow:inst2| ; 223 (0)             ; 112 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2                         ; estrutura_OverTheRainbow ; work         ;
+;          |OverTheRainbow:controle|     ; 63 (63)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle ; OverTheRainbow           ; work         ;
+;          |divisor_clock:div_clk|       ; 85 (85)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|divisor_clock:div_clk   ; divisor_clock            ; work         ;
+;          |temporizador:temp|           ; 75 (75)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|temporizador:temp       ; temporizador             ; work         ;
+;       |seletor_de_musica:inst4|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|bloco_musicas_e_mute:inst11|seletor_de_musica:inst4                                ; seletor_de_musica        ; work         ;
+;    |controle:inst1|                    ; 11 (10)             ; 11 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|controle:inst1                                                                     ; controle                 ; work         ;
+;       |gera_pulso:gp2|                 ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|controle:inst1|gera_pulso:gp2                                                      ; gera_pulso               ; work         ;
+;       |gera_pulso:gp3|                 ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|controle:inst1|gera_pulso:gp3                                                      ; gera_pulso               ; work         ;
+;       |gera_pulso:gp4|                 ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|controle:inst1|gera_pulso:gp4                                                      ; gera_pulso               ; work         ;
+;    |debouncers:inst|                   ; 293 (0)             ; 136 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|debouncers:inst                                                                    ; debouncers               ; work         ;
+;       |debounce:d1|                    ; 73 (73)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|debouncers:inst|debounce:d1                                                        ; debounce                 ; work         ;
+;       |debounce:d2|                    ; 73 (73)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|debouncers:inst|debounce:d2                                                        ; debounce                 ; work         ;
+;       |debounce:d3|                    ; 74 (74)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|debouncers:inst|debounce:d3                                                        ; debounce                 ; work         ;
+;       |debounce:d4|                    ; 73 (73)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |music_player_v2|debouncers:inst|debounce:d4                                                        ; debounce                 ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------+
+; State Machine - |music_player_v2|bloco_lcd:inst13|Controle_LCD:inst8|estado                      ;
++----------------------+---------------+---------------+----------------------+--------------------+
+; Name                 ; estado.ENVIAR ; estado.PRONTO ; estado.INICIALIZACAO ; estado.ENERGIZACAO ;
++----------------------+---------------+---------------+----------------------+--------------------+
+; estado.ENERGIZACAO   ; 0             ; 0             ; 0                    ; 0                  ;
+; estado.INICIALIZACAO ; 0             ; 0             ; 1                    ; 1                  ;
+; estado.PRONTO        ; 0             ; 1             ; 0                    ; 1                  ;
+; estado.ENVIAR        ; 1             ; 0             ; 0                    ; 1                  ;
++----------------------+---------------+---------------+----------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |music_player_v2|controle:inst1|maquina1        ;
++----------------+---------------+---------------+----------------+
+; Name           ; maquina1.PLAY ; maquina1.STOP ; maquina1.PAUSE ;
++----------------+---------------+---------------+----------------+
+; maquina1.PAUSE ; 0             ; 0             ; 0              ;
+; maquina1.STOP  ; 0             ; 1             ; 1              ;
+; maquina1.PLAY  ; 1             ; 0             ; 1              ;
++----------------+---------------+---------------+----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|estado_atual                                                                                                                                                                                                                                                                                                                                               ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name             ; estado_atual.s23 ; estado_atual.s22 ; estado_atual.s21 ; estado_atual.s20 ; estado_atual.s19 ; estado_atual.s18 ; estado_atual.s17 ; estado_atual.s16 ; estado_atual.s15 ; estado_atual.s14 ; estado_atual.s13 ; estado_atual.s12 ; estado_atual.s11 ; estado_atual.s10 ; estado_atual.s9 ; estado_atual.s8 ; estado_atual.s7 ; estado_atual.s6 ; estado_atual.s5 ; estado_atual.s4 ; estado_atual.s3 ; estado_atual.s2 ; estado_atual.s1 ; estado_atual.s0 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; estado_atual.s0  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ;
+; estado_atual.s1  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1               ;
+; estado_atual.s2  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1               ;
+; estado_atual.s3  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1               ;
+; estado_atual.s4  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s5  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s6  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s7  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s8  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s9  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s10 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s11 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s12 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s13 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s14 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s15 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s16 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s17 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s18 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s19 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s20 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s21 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s22 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s23 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|estado_atual                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name             ; estado_atual.s32 ; estado_atual.s31 ; estado_atual.s30 ; estado_atual.s29 ; estado_atual.s28 ; estado_atual.s27 ; estado_atual.s26 ; estado_atual.s25 ; estado_atual.s24 ; estado_atual.s23 ; estado_atual.s22 ; estado_atual.s21 ; estado_atual.s20 ; estado_atual.s19 ; estado_atual.s18 ; estado_atual.s17 ; estado_atual.s16 ; estado_atual.s15 ; estado_atual.s14 ; estado_atual.s13 ; estado_atual.s12 ; estado_atual.s11 ; estado_atual.s10 ; estado_atual.s9 ; estado_atual.s8 ; estado_atual.s7 ; estado_atual.s6 ; estado_atual.s5 ; estado_atual.s4 ; estado_atual.s3 ; estado_atual.s2 ; estado_atual.s1 ; estado_atual.s0 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; estado_atual.s0  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ;
+; estado_atual.s1  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1               ;
+; estado_atual.s2  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1               ;
+; estado_atual.s3  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1               ;
+; estado_atual.s4  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s5  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s6  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s7  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s8  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s9  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s10 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s11 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s12 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s13 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s14 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s15 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s16 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s17 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s18 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s19 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s20 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s21 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s22 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s23 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s24 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s25 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s26 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s27 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s28 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s29 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s30 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s31 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; estado_atual.s32 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                     ;
++------------------------------------------------------------------------+-----------------------------------------------------------------------+------------------------+
+; Latch Name                                                             ; Latch Enable Signal                                                   ; Free of Timing Hazards ;
++------------------------------------------------------------------------+-----------------------------------------------------------------------+------------------------+
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[31] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[31] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[31] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[30] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[30] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[30] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[29] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[29] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[29] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[28] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[28] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[28] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[27] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[27] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[27] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[26] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[26] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[26] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[25] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[25] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[25] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[24] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[24] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[24] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[23] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[23] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[23] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[22] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[22] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[22] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[21] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[21] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[21] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[20] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[20] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[20] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[19] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[19] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[19] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[18] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[18] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[18] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[17] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[17] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[17] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[16] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[16] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[16] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[15] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[15] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[15] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[14] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[14] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[14] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[13] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[13] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[13] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[12] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[12] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[12] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[11] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[11] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[11] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[10] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[10] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[10] ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[9]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[9]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[9]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[8]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[8]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[8]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[7]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[7]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[7]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[6]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[6]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[6]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[5]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[5]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[5]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[4]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[4]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[4]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[3]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[3]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[3]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[2]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[2]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[2]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[1]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[1]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[1]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_seg[0]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux1        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_dez_seg[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0]  ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|num_und_min[0] ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux2         ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux2        ; yes                    ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux3         ; bloco_displays_e_leds:inst12|contador_assincrono:inst6|of_aux3        ; yes                    ;
+; Number of user-specified and inferred latches = 98                     ;                                                                       ;                        ;
++------------------------------------------------------------------------+-----------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                  ;
++-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                         ; Reason for Removal                                                                                          ;
++-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[14,21,22] ; Stuck at VCC due to stuck port data_in                                                                      ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[0..5,10]  ; Stuck at GND due to stuck port data_in                                                                      ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Freq_out[17..27]   ; Stuck at GND due to stuck port data_in                                                                      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[27]            ; Stuck at GND due to stuck port data_in                                                                      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[13,20,21]      ; Stuck at VCC due to stuck port data_in                                                                      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[0..4,9]        ; Stuck at GND due to stuck port data_in                                                                      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Freq_out[17..27]        ; Stuck at GND due to stuck port data_in                                                                      ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[9,13,20]  ; Merged with bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[27] ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[8,19]     ; Merged with bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[26] ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[17,18]    ; Merged with bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[25] ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[7,16]     ; Merged with bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[24] ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[6,11,15]  ; Merged with bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle|Temp_out[23] ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[8,12,19]       ; Merged with bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[26]      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[7,18]          ; Merged with bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[25]      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[16,17]         ; Merged with bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[24]      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[6,15]          ; Merged with bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[23]      ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[5,10,14]       ; Merged with bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle|Temp_out[22]      ;
+; bloco_lcd:inst13|logica_LCD:inst7|lcd_bus[8]                                                          ; Stuck at GND due to stuck port data_in                                                                      ;
+; bloco_lcd:inst13|Controle_LCD:inst8|rw                                                                ; Stuck at GND due to stuck port data_in                                                                      ;
+; controle:inst1|play_out                                                                               ; Merged with controle:inst1|maquina1.PLAY                                                                    ;
+; debouncers:inst|debounce:d1|contador[31]                                                              ; Lost fanout                                                                                                 ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|divisor_clock:div_clk|contador[31]            ; Lost fanout                                                                                                 ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|divisor_clock:div_clk|contador[31]         ; Lost fanout                                                                                                 ;
+; debouncers:inst|debounce:d2|contador[31]                                                              ; Lost fanout                                                                                                 ;
+; debouncers:inst|debounce:d3|contador[31]                                                              ; Lost fanout                                                                                                 ;
+; debouncers:inst|debounce:d4|contador[31]                                                              ; Lost fanout                                                                                                 ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|contador[31]                  ; Lost fanout                                                                                                 ;
+; Total Number of Removed Registers = 76                                                                ;                                                                                                             ;
++-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                       ;
++----------------------------------------------+---------------------------+----------------------------------------+
+; Register name                                ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------------------------+---------------------------+----------------------------------------+
+; bloco_lcd:inst13|logica_LCD:inst7|lcd_bus[8] ; Stuck at GND              ; bloco_lcd:inst13|Controle_LCD:inst8|rw ;
+;                                              ; due to stuck port data_in ;                                        ;
++----------------------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 589   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 4     ;
+; Number of registers using Asynchronous Clear ; 33    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 111   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                           ;
++----------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                            ; Fan out ;
++----------------------------------------------------------------------------------------------+---------+
+; controle:inst1|stop_out                                                                      ; 191     ;
+; bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|divisor_clock:div_clk|contador[0] ; 2       ;
+; bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|divisor_clock:div_clk|contador[0]    ; 2       ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|cont_seletor[0]                       ; 3       ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|aux_seletor[3]                        ; 4       ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|aux_seletor[2]                        ; 4       ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|aux_seletor[1]                        ; 3       ;
+; debouncers:inst|debounce:d1|contador[0]                                                      ; 1       ;
+; bloco_lcd:inst13|Controle_LCD:inst8|busy                                                     ; 1       ;
+; debouncers:inst|debounce:d3|contador[0]                                                      ; 1       ;
+; debouncers:inst|debounce:d2|contador[0]                                                      ; 1       ;
+; debouncers:inst|debounce:d4|contador[0]                                                      ; 1       ;
+; bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1|contador[0]          ; 1       ;
+; Total number of inverted registers = 13                                                      ;         ;
++----------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |music_player_v2|debouncers:inst|debounce:d1|contador[22]                                                  ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |music_player_v2|debouncers:inst|debounce:d2|contador[31]                                                  ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |music_player_v2|debouncers:inst|debounce:d4|contador[29]                                                  ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |music_player_v2|debouncers:inst|debounce:d3|contador[1]                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|temporizador:temp|Contagem[22] ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|temporizador:temp|Contagem[25] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|temporizador:temp|Contagem[13]    ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |music_player_v2|bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|temporizador:temp|Contagem[14]    ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 96 LEs               ; 224 LEs                ; Yes        ; |music_player_v2|bloco_displays_e_leds:inst12|contador_assincrono:inst6|bcd[13]                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |music_player_v2|bloco_lcd:inst13|Controle_LCD:inst8|rs                                                    ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |music_player_v2|bloco_lcd:inst13|Controle_LCD:inst8|clk_count[19]                                         ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |music_player_v2|bloco_lcd:inst13|Controle_LCD:inst8|lcd_data[0]                                           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |music_player_v2|controle:inst1|Selector0                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncers:inst|debounce:d1 ;
++----------------+---------+-----------------------------------------------+
+; Parameter Name ; Value   ; Type                                          ;
++----------------+---------+-----------------------------------------------+
+; overflow       ; 1500000 ; Signed Integer                                ;
++----------------+---------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncers:inst|debounce:d2 ;
++----------------+---------+-----------------------------------------------+
+; Parameter Name ; Value   ; Type                                          ;
++----------------+---------+-----------------------------------------------+
+; overflow       ; 1500000 ; Signed Integer                                ;
++----------------+---------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncers:inst|debounce:d3 ;
++----------------+---------+-----------------------------------------------+
+; Parameter Name ; Value   ; Type                                          ;
++----------------+---------+-----------------------------------------------+
+; overflow       ; 1500000 ; Signed Integer                                ;
++----------------+---------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncers:inst|debounce:d4 ;
++----------------+---------+-----------------------------------------------+
+; Parameter Name ; Value   ; Type                                          ;
++----------------+---------+-----------------------------------------------+
+; overflow       ; 1500000 ; Signed Integer                                ;
++----------------+---------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bloco_lcd:inst13|Controle_LCD:inst8 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; clk_freq       ; 50    ; Signed Integer                                          ;
+; display_lines  ; '1'   ; Enumerated                                              ;
+; character_font ; '0'   ; Enumerated                                              ;
+; display_on_off ; '1'   ; Enumerated                                              ;
+; cursor         ; '0'   ; Enumerated                                              ;
+; blink          ; '0'   ; Enumerated                                              ;
+; inc_dec        ; '1'   ; Enumerated                                              ;
+; shift          ; '0'   ; Enumerated                                              ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bloco_displays_e_leds:inst12|contador_assincrono:inst6|divisor_clock:D1" ;
++------------------+-------+----------+---------------------------------------------------------------+
+; Port             ; Type  ; Severity ; Details                                                       ;
++------------------+-------+----------+---------------------------------------------------------------+
+; overflow[19..18] ; Input ; Info     ; Stuck at VCC                                                  ;
+; overflow[9..8]   ; Input ; Info     ; Stuck at VCC                                                  ;
+; overflow[27..23] ; Input ; Info     ; Stuck at GND                                                  ;
+; overflow[21..20] ; Input ; Info     ; Stuck at GND                                                  ;
+; overflow[17..15] ; Input ; Info     ; Stuck at GND                                                  ;
+; overflow[13..12] ; Input ; Info     ; Stuck at GND                                                  ;
+; overflow[5..0]   ; Input ; Info     ; Stuck at GND                                                  ;
+; overflow[22]     ; Input ; Info     ; Stuck at VCC                                                  ;
+; overflow[14]     ; Input ; Info     ; Stuck at VCC                                                  ;
+; overflow[11]     ; Input ; Info     ; Stuck at VCC                                                  ;
+; overflow[10]     ; Input ; Info     ; Stuck at GND                                                  ;
+; overflow[7]      ; Input ; Info     ; Stuck at GND                                                  ;
+; overflow[6]      ; Input ; Info     ; Stuck at VCC                                                  ;
++------------------+-------+----------+---------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle"    ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; clk_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle"         ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; clk_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 33                          ;
+; cycloneiii_ff         ; 589                         ;
+;     CLR               ; 1                           ;
+;     ENA               ; 75                          ;
+;     ENA CLR SCLR      ; 32                          ;
+;     ENA SLD           ; 4                           ;
+;     plain             ; 477                         ;
+; cycloneiii_lcell_comb ; 1755                        ;
+;     arith             ; 490                         ;
+;         2 data inputs ; 460                         ;
+;         3 data inputs ; 30                          ;
+;     normal            ; 1265                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 290                         ;
+;         3 data inputs ; 254                         ;
+;         4 data inputs ; 698                         ;
+;                       ;                             ;
+; Max LUT depth         ; 12.40                       ;
+; Average LUT depth     ; 4.86                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Sep 13 23:18:52 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto_3 -c Projeto_3_musicplayer
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
+    Info (12022): Found design unit 1: debounce-arc_deb File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debounce.vhd Line: 16
+    Info (12023): Found entity 1: debounce File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debounce.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file music_player_v2.bdf
+    Info (12023): Found entity 1: music_player_v2
+Info (12021): Found 2 design units, including 1 entities, in source file gera_pulso.vhd
+    Info (12022): Found design unit 1: gera_pulso-arc_gp File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/gera_pulso.vhd Line: 12
+    Info (12023): Found entity 1: gera_pulso File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/gera_pulso.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file divisor_clock.vhd
+    Info (12022): Found design unit 1: divisor_clock-arc_div File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/divisor_clock.vhd Line: 13
+    Info (12023): Found entity 1: divisor_clock File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/divisor_clock.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file debouncers.vhd
+    Info (12022): Found design unit 1: debouncers-deb File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd Line: 11
+    Info (12023): Found entity 1: debouncers File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file controle.vhd
+    Info (12022): Found design unit 1: controle-bhv File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/controle.vhd Line: 14
+    Info (12023): Found entity 1: controle File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/controle.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file seletor_de_musica.vhd
+    Info (12022): Found design unit 1: seletor_de_musica-arc_sdm File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_musica.vhd Line: 14
+    Info (12023): Found entity 1: seletor_de_musica File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_musica.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file frerejacques.vhd
+    Info (12022): Found design unit 1: FrereJacques-bhv File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 11
+    Info (12023): Found entity 1: FrereJacques File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file overtherainbow.vhd
+    Info (12022): Found design unit 1: OverTheRainbow-bhv File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 11
+    Info (12023): Found entity 1: OverTheRainbow File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file leds.vhd
+    Info (12022): Found design unit 1: leds-bhv File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/leds.vhd Line: 11
+    Info (12023): Found entity 1: leds File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/leds.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file temporizador.vhd
+    Info (12022): Found design unit 1: temporizador-Comportamento File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/temporizador.vhd Line: 13
+    Info (12023): Found entity 1: temporizador File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/temporizador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file estrutura_frerejacques.vhd
+    Info (12022): Found design unit 1: estrutura_FrereJacques-arc_est_frere File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_FrereJacques.vhd Line: 11
+    Info (12023): Found entity 1: estrutura_FrereJacques File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_FrereJacques.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file estrutura_overtherainbow.vhd
+    Info (12022): Found design unit 1: estrutura_OverTheRainbow-arc_est_otv File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_OverTheRainbow.vhd Line: 11
+    Info (12023): Found entity 1: estrutura_OverTheRainbow File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_OverTheRainbow.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file seletor_de_buzzer.vhd
+    Info (12022): Found design unit 1: seletor_de_buzzer-arc_sdb File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_buzzer.vhd Line: 15
+    Info (12023): Found entity 1: seletor_de_buzzer File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_buzzer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mute.vhd
+    Info (12022): Found design unit 1: Mute-bhv File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Mute.vhd Line: 13
+    Info (12023): Found entity 1: Mute File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Mute.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador_assincrono.vhd
+    Info (12022): Found design unit 1: contador_assincrono-arc_sinc File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 15
+    Info (12023): Found entity 1: contador_assincrono File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file controle_lcd.vhd
+    Info (12022): Found design unit 1: Controle_LCD-bhv File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Controle_LCD.vhd Line: 22
+    Info (12023): Found entity 1: Controle_LCD File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Controle_LCD.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file logica_lcd.vhd
+    Info (12022): Found design unit 1: logica_LCD-arc_logica File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Logica_LCD.vhd Line: 14
+    Info (12023): Found entity 1: logica_LCD File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/Logica_LCD.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file bloco_musicas_e_mute.bdf
+    Info (12023): Found entity 1: bloco_musicas_e_mute
+Info (12021): Found 1 design units, including 1 entities, in source file bloco_displays_e_leds.bdf
+    Info (12023): Found entity 1: bloco_displays_e_leds
+Info (12021): Found 1 design units, including 1 entities, in source file bloco_lcd.bdf
+    Info (12023): Found entity 1: bloco_lcd
+Info (12127): Elaborating entity "music_player_v2" for the top level hierarchy
+Info (12128): Elaborating entity "bloco_musicas_e_mute" for hierarchy "bloco_musicas_e_mute:inst11"
+Info (12128): Elaborating entity "Mute" for hierarchy "bloco_musicas_e_mute:inst11|Mute:inst13"
+Info (12128): Elaborating entity "seletor_de_buzzer" for hierarchy "bloco_musicas_e_mute:inst11|seletor_de_buzzer:inst9"
+Warning (10492): VHDL Process Statement warning at seletor_de_buzzer.vhd(20): signal "selecao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_buzzer.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at seletor_de_buzzer.vhd(22): signal "buzzer_msc1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_buzzer.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at seletor_de_buzzer.vhd(24): signal "buzzer_msc2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_buzzer.vhd Line: 24
+Info (12128): Elaborating entity "estrutura_FrereJacques" for hierarchy "bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst"
+Warning (10036): Verilog HDL or VHDL warning at estrutura_FrereJacques.vhd(12): object "saida_msc" assigned a value but never read File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_FrereJacques.vhd Line: 12
+Info (12128): Elaborating entity "temporizador" for hierarchy "bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|temporizador:temp" File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_FrereJacques.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at temporizador.vhd(34): signal "Contagem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/temporizador.vhd Line: 34
+Info (12128): Elaborating entity "divisor_clock" for hierarchy "bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|divisor_clock:div_clk" File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_FrereJacques.vhd Line: 50
+Info (12128): Elaborating entity "FrereJacques" for hierarchy "bloco_musicas_e_mute:inst11|estrutura_FrereJacques:inst|FrereJacques:controle" File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_FrereJacques.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(67): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(70): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(76): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(79): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(85): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(88): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(94): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(97): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(103): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(106): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(112): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(115): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(121): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(124): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(130): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 130
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(133): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(139): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 139
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(142): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(148): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 148
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(151): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(157): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(160): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(166): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(169): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(175): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(178): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(184): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 184
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(187): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(193): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 193
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(196): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 196
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(202): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 202
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(205): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 205
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(211): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 211
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(214): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 214
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(220): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 220
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(223): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 223
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(229): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 229
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(232): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(238): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 238
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(241): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 241
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(247): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 247
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(250): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 250
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(256): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 256
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(259): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 259
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(265): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 265
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(268): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 268
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(274): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(277): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 277
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(283): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 283
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(286): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 286
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(292): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 292
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(295): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 295
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(301): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 301
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(304): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 304
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(310): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 310
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(313): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 313
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(319): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 319
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(322): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 322
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(328): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 328
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(331): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 331
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(337): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 337
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(340): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 340
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(346): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 346
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(349): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 349
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(355): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 355
+Warning (10492): VHDL Process Statement warning at FrereJacques.vhd(358): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/FrereJacques.vhd Line: 358
+Info (12128): Elaborating entity "seletor_de_musica" for hierarchy "bloco_musicas_e_mute:inst11|seletor_de_musica:inst4"
+Warning (10492): VHDL Process Statement warning at seletor_de_musica.vhd(19): signal "selecao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/seletor_de_musica.vhd Line: 19
+Info (12128): Elaborating entity "estrutura_OverTheRainbow" for hierarchy "bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2"
+Warning (10036): Verilog HDL or VHDL warning at estrutura_OverTheRainbow.vhd(12): object "saida_msc" assigned a value but never read File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_OverTheRainbow.vhd Line: 12
+Info (12128): Elaborating entity "OverTheRainbow" for hierarchy "bloco_musicas_e_mute:inst11|estrutura_OverTheRainbow:inst2|OverTheRainbow:controle" File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/estrutura_OverTheRainbow.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(69): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(72): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(78): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(81): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(87): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(90): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(96): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(99): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(105): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(108): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(114): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(117): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(123): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(126): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(132): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(135): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 135
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(141): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 141
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(144): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 144
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(150): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(153): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(159): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(162): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(168): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(171): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(177): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(180): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 180
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(186): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(189): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 189
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(195): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 195
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(198): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(204): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 204
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(207): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 207
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(213): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 213
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(216): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 216
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(222): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 222
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(225): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 225
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(231): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 231
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(234): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 234
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(240): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 240
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(243): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 243
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(249): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 249
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(252): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 252
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(258): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 258
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(261): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 261
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(267): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 267
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(270): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 270
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(276): signal "Stop_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 276
+Warning (10492): VHDL Process Statement warning at OverTheRainbow.vhd(279): signal "Play_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/OverTheRainbow.vhd Line: 279
+Info (12128): Elaborating entity "controle" for hierarchy "controle:inst1"
+Info (12128): Elaborating entity "gera_pulso" for hierarchy "controle:inst1|gera_pulso:gp2" File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/controle.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at gera_pulso.vhd(19): signal "FF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/gera_pulso.vhd Line: 19
+Info (12128): Elaborating entity "debouncers" for hierarchy "debouncers:inst"
+Warning (10492): VHDL Process Statement warning at debouncers.vhd(30): signal "saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at debouncers.vhd(31): signal "saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd Line: 31
+Warning (10492): VHDL Process Statement warning at debouncers.vhd(32): signal "saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at debouncers.vhd(33): signal "saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd Line: 33
+Info (12128): Elaborating entity "debounce" for hierarchy "debouncers:inst|debounce:d1" File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debouncers.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at debounce.vhd(24): signal "ff" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/debounce.vhd Line: 24
+Info (12128): Elaborating entity "bloco_lcd" for hierarchy "bloco_lcd:inst13"
+Info (12128): Elaborating entity "Controle_LCD" for hierarchy "bloco_lcd:inst13|Controle_LCD:inst8"
+Info (12128): Elaborating entity "logica_LCD" for hierarchy "bloco_lcd:inst13|logica_LCD:inst7"
+Info (12128): Elaborating entity "bloco_displays_e_leds" for hierarchy "bloco_displays_e_leds:inst12"
+Info (12128): Elaborating entity "contador_assincrono" for hierarchy "bloco_displays_e_leds:inst12|contador_assincrono:inst6"
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(45): signal "stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(52): signal "play" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 52
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(54): signal "clock_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(62): signal "of_aux1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 62
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(63): signal "num_und_seg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(64): signal "num_und_seg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(71): signal "of_aux2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(72): signal "num_dez_seg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(73): signal "num_dez_seg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(80): signal "of_aux3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(81): signal "num_und_min" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at contador_assincrono.vhd(82): signal "num_und_min" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 82
+Warning (10631): VHDL Process Statement warning at contador_assincrono.vhd(42): inferring latch(es) for signal or variable "num_und_seg", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at contador_assincrono.vhd(42): inferring latch(es) for signal or variable "num_dez_seg", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at contador_assincrono.vhd(42): inferring latch(es) for signal or variable "num_und_min", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at contador_assincrono.vhd(42): inferring latch(es) for signal or variable "of_aux2", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at contador_assincrono.vhd(42): inferring latch(es) for signal or variable "of_aux3", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "of_aux3" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "of_aux2" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[0]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[1]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[2]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[3]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[4]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[5]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[6]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[7]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[8]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[9]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[10]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[11]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[12]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[13]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[14]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[15]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[16]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[17]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[18]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[19]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[20]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[21]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[22]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[23]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[24]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[25]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[26]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[27]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[28]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[29]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[30]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_min[31]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[0]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[1]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[2]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[3]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[4]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[5]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[6]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[7]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[8]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[9]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[10]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[11]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[12]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[13]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[14]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[15]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[16]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[17]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[18]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[19]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[20]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[21]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[22]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[23]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[24]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[25]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[26]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[27]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[28]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[29]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[30]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_dez_seg[31]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[0]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[1]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[2]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[3]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[4]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[5]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[6]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[7]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[8]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[9]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[10]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[11]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[12]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[13]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[14]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[15]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[16]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[17]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[18]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[19]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[20]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[21]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[22]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[23]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[24]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[25]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[26]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[27]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[28]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[29]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[30]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (10041): Inferred latch for "num_und_seg[31]" at contador_assincrono.vhd(42) File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/contador_assincrono.vhd Line: 42
+Info (12128): Elaborating entity "leds" for hierarchy "bloco_displays_e_leds:inst12|leds:inst2"
+Warning (10492): VHDL Process Statement warning at leds.vhd(16): signal "stop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/leds.vhd Line: 16
+Warning (10492): VHDL Process Statement warning at leds.vhd(17): signal "play" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/leds.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at leds.vhd(18): signal "play" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/Periodo_22.1/Eletronica_Digital/Projetos/Projeto_3/leds.vhd Line: 18
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_rw" is stuck at GND
+    Warning (13410): Pin "led[4]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1823 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 1790 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 150 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Tue Sep 13 23:19:02 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
+
+
