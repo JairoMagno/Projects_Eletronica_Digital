@@ -1,0 +1,6 @@
+ENTITY gera_puslo IS
+	PORT(
+		botao_in	:	IN		std_logic;
+		botao_out:	OUT 	std_logic;
+	);
+END gera_pulso;

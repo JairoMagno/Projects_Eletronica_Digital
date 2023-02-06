@@ -1,0 +1,26 @@
+CONSTANT NumPulsos = 4;
+CONSTANT Overflow_f = NumPulsos -1;
+CONSTANT n_bits_f = LOG2(overflow_f);
+
+SUBDESIGN Exemplo(
+	clk_in	:	INPUT;
+	clk_out	:	OUTPUT;
+)
+
+VARIABLE 
+	cnt[n_bits_f..0]	:	DFF;
+	toggle				:	TFF;
+
+BEGIN
+	cnt[].clk	=	clk_in;
+	toggle		=	clk_in;
+	
+	IF cnt[] < Overflow_f THEN
+		cnt[].d = cnt[] + 1;
+	ELSE
+		cnt[].d  = 0;
+		toggle.t = VCC;
+	END IF;
+	
+	clk_out = toggle;
+END;

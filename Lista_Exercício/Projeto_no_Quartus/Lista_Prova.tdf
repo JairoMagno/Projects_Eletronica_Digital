@@ -1,0 +1,28 @@
+SUBDESIGN Lista_Prova(
+	A[3..1], B[3..1]	:	INPUT;
+	saida					:	OUTPUT;
+)
+
+VARIABLE 
+	aux[3..1]	:	NODE;
+BEGIN
+	
+	FOR i IN 1 to 3 GENERATE
+	
+		IF i == 1 GENERATE
+			aux[i] = A[i] OR B[i];
+		END GENERATE;
+		
+		IF i == 2 GENERATE
+			aux[i] = A[i] NAND B[i];
+		END GENERATE;
+		
+		IF i == 3 GENERATE
+			aux[i] = A[i] NOR B[i];
+		END GENERATE;
+	
+	END GENERATE;
+	
+	saida	 = aux[1] AND aux[2] AND aux[3];
+	
+END;

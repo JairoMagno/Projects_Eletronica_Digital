@@ -1,0 +1,36 @@
+|SC_Prova
+A[0] => aux[0].IN0
+A[1] => aux[1].IN0
+A[2] => aux[2].IN0
+A[3] => aux[3].IN0
+A[4] => aux[4].IN0
+A[5] => aux[5].IN0
+A[6] => aux[6].IN0
+A[7] => aux[7].IN0
+A[8] => aux[8].IN0
+A[9] => aux[9].IN0
+A[10] => aux[10].IN0
+A[11] => aux[11].IN0
+A[12] => aux[12].IN0
+A[13] => aux[13].IN0
+A[14] => aux[14].IN0
+A[15] => aux[15].IN0
+B[0] => aux[0].IN1
+B[1] => aux[1].IN1
+B[2] => aux[2].IN1
+B[3] => aux[3].IN1
+B[4] => aux[4].IN1
+B[5] => aux[5].IN1
+B[6] => aux[6].IN1
+B[7] => aux[7].IN1
+B[8] => aux[8].IN1
+B[9] => aux[9].IN1
+B[10] => aux[10].IN1
+B[11] => aux[11].IN1
+B[12] => aux[12].IN1
+B[13] => aux[13].IN1
+B[14] => aux[14].IN1
+B[15] => aux[15].IN1
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+

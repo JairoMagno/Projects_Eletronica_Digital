@@ -1,0 +1,302 @@
+# Current time Wed Aug 31 18:00:49 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 005e7acd. Traceback:
+# 0    0x005e7acd: 'WinMain + 0x8e73d'
+# 1    0x006434f6: 'WinMain + 0xea166'
+# 2    0x00643417: 'WinMain + 0xea087'
+# 3    0x0064ed3b: 'WinMain + 0xf59ab'
+# 4    0x006503ef: 'WinMain + 0xf705f'
+# 5    0x0065060b: 'WinMain + 0xf727b'
+# 6    0x62c939f1: 'TclNREvalObjv + 0x3e1'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Thu Sep 08 15:57:42 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 004a2d9f. Traceback:
+# 0    0x004a2d9f: 'xsltIterateSupportedLocales + 0x9636f'
+# 1    0x00766faa: 'WlfContextItem::`vector deleting destructor' + 0x6bd0a'
+# 2    0x0076830c: 'WlfContextItem::`vector deleting destructor' + 0x6d06c'
+# 3    0x007665b5: 'WlfContextItem::`vector deleting destructor' + 0x6b315'
+# 4    0x007646be: 'WlfContextItem::`vector deleting destructor' + 0x6941e'
+# 5    0x0067cd1d: 'WinMain + 0x12398d'
+# 6    0x004f72f9: 'EnumDispProc + 0x1779'
+# 7    0x6eb81fae: 'TclInvokeStringCommand + 0xbe'
+# 8    0x6eb839f1: 'TclNREvalObjv + 0x3e1'
+# 9    0x6eb83a49: 'TclNRRunCallbacks + 0x49'
+# 10   0x6eb8563c: 'Tcl_EvalObjEx + 0x2c'
+# 11   0x6ef00400: 'Itcl_EvalMemberCode + 0x300'
+# 12   0x14fc57d8: '<unknown (@0x14fc57d8)>'
+# 13   0xcccccccc: '<unknown (@0xcccccccc)>'
+# 14   0x0264eefc: '<unknown (@0x264eefc)>'
+# 15   0x0264a79c: '<unknown (@0x264a79c)>'
+# 16   0x6eb839f1: 'TclNREvalObjv + 0x3e1'
+# 17   0x6eb83a49: 'TclNRRunCallbacks + 0x49'
+# 18   0x6eb84ef9: 'Tcl_EvalEx + 0x8b9'
+# 19   0x6eb8465a: 'Tcl_EvalEx + 0x1a'
+# 20   0x6e961dd9: 'TkBindEventProc + 0x1b9'
+# 21   0x6e96ec67: 'Tk_HandleEvent + 0x247'
+# 22   0x6e96de5c: 'TkDeleteThreadExitHandler + 0x24c'
+# 23   0x6ec1acb5: 'Tcl_ServiceEvent + 0xc5'
+# 24   0x6ec1b072: 'Tcl_DoOneEvent + 0x162'
+StackWalk failed 0
+# End of Stack Trace
+
+# Current time Thu Sep 08 15:57:43 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6e9cf3fe. Traceback:
+# 0    0x6e9cf3fe: 'TkpTesttextCmd + 0xc79e'
+# 1    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 2    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 3    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 4    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 5    0x6e9d1555: 'TkBTreeNumLines + 0x16b5'
+# 6    0x6e9c9843: 'TkpTesttextCmd + 0x6be3'
+# 7    0x6e9c8968: 'TkpTesttextCmd + 0x5d08'
+# 8    0x6e96ec2d: 'Tk_HandleEvent + 0x20d'
+# 9    0x6e9f0550: 'Tk_DestroyWindow + 0x2f0'
+# 10   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 11   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 12   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 13   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 14   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 15   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 16   0x6e9edca3: 'Tk_PkgInitStubsCheck + 0xc33'
+# 17   0x6e96dbec: 'Tk_MainLoop + 0xac'
+# 18   0x6ebdee6c: 'Tcl_FinalizeThread + 0x5c'
+# 19   0x6ebdea0c: 'Tcl_Exit + 0xac'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Thu Sep 08 15:57:43 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6e9cf3fe. Traceback:
+# 0    0x6e9cf3fe: 'TkpTesttextCmd + 0xc79e'
+# 1    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 2    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 3    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 4    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 5    0x6e9d1555: 'TkBTreeNumLines + 0x16b5'
+# 6    0x6e9c9843: 'TkpTesttextCmd + 0x6be3'
+# 7    0x6e9c8968: 'TkpTesttextCmd + 0x5d08'
+# 8    0x6e96ec2d: 'Tk_HandleEvent + 0x20d'
+# 9    0x6e9f0550: 'Tk_DestroyWindow + 0x2f0'
+# 10   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 11   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 12   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 13   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 14   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 15   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 16   0x6e9edca3: 'Tk_PkgInitStubsCheck + 0xc33'
+# 17   0x6e96dbec: 'Tk_MainLoop + 0xac'
+# 18   0x6ebdee6c: 'Tcl_FinalizeThread + 0x5c'
+# 19   0x6ebdea0c: 'Tcl_Exit + 0xac'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Thu Sep 08 15:57:43 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6e9cf3fe. Traceback:
+# 0    0x6e9cf3fe: 'TkpTesttextCmd + 0xc79e'
+# 1    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 2    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 3    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 4    0x6e9cf45a: 'TkpTesttextCmd + 0xc7fa'
+# 5    0x6e9d1555: 'TkBTreeNumLines + 0x16b5'
+# 6    0x6e9c9843: 'TkpTesttextCmd + 0x6be3'
+# 7    0x6e9c8968: 'TkpTesttextCmd + 0x5d08'
+# 8    0x6e96ec2d: 'Tk_HandleEvent + 0x20d'
+# 9    0x6e9f0550: 'Tk_DestroyWindow + 0x2f0'
+# 10   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 11   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 12   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 13   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 14   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 15   0x6e9f045d: 'Tk_DestroyWindow + 0x1fd'
+# 16   0x6e9edca3: 'Tk_PkgInitStubsCheck + 0xc33'
+# 17   0x6e96dbec: 'Tk_MainLoop + 0xac'
+# 18   0x6ebdee6c: 'Tcl_FinalizeThread + 0x5c'
+# 19   0x6ebdea0c: 'Tcl_Exit + 0xac'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Fri Sep 09 22:05:30 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6c2df1d8. Traceback:
+# 0    0x6c2df1d8: 'TkpTesttextCmd + 0xc578'
+# 1    0x6c2e06cc: 'TkBTreeNumLines + 0x82c'
+# 2    0x6c2d7bc6: 'TkpTesttextCmd + 0x4f66'
+# 3    0x6c2db18e: 'TkpTesttextCmd + 0x852e'
+# 4    0x6c7039f1: 'TclNREvalObjv + 0x3e1'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Fri Sep 09 22:05:30 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6c2df3fe. Traceback:
+# 0    0x6c2df3fe: 'TkpTesttextCmd + 0xc79e'
+# 1    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 2    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 3    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 4    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 5    0x6c2e1555: 'TkBTreeNumLines + 0x16b5'
+# 6    0x6c2d9843: 'TkpTesttextCmd + 0x6be3'
+# 7    0x6c2d8968: 'TkpTesttextCmd + 0x5d08'
+# 8    0x6c27ec2d: 'Tk_HandleEvent + 0x20d'
+# 9    0x6c300550: 'Tk_DestroyWindow + 0x2f0'
+# 10   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 11   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 12   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 13   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 14   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 15   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 16   0x6c2fdca3: 'Tk_PkgInitStubsCheck + 0xc33'
+# 17   0x6c27dbec: 'Tk_MainLoop + 0xac'
+# 18   0x6c75ee6c: 'Tcl_FinalizeThread + 0x5c'
+# 19   0x6c75ea0c: 'Tcl_Exit + 0xac'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Fri Sep 09 22:05:30 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6c2df3fe. Traceback:
+# 0    0x6c2df3fe: 'TkpTesttextCmd + 0xc79e'
+# 1    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 2    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 3    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 4    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 5    0x6c2e1555: 'TkBTreeNumLines + 0x16b5'
+# 6    0x6c2d9843: 'TkpTesttextCmd + 0x6be3'
+# 7    0x6c2d8968: 'TkpTesttextCmd + 0x5d08'
+# 8    0x6c27ec2d: 'Tk_HandleEvent + 0x20d'
+# 9    0x6c300550: 'Tk_DestroyWindow + 0x2f0'
+# 10   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 11   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 12   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 13   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 14   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 15   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 16   0x6c2fdca3: 'Tk_PkgInitStubsCheck + 0xc33'
+# 17   0x6c27dbec: 'Tk_MainLoop + 0xac'
+# 18   0x6c75ee6c: 'Tcl_FinalizeThread + 0x5c'
+# 19   0x6c75ea0c: 'Tcl_Exit + 0xac'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Fri Sep 09 22:05:30 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6c2df3fe. Traceback:
+# 0    0x6c2df3fe: 'TkpTesttextCmd + 0xc79e'
+# 1    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 2    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 3    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 4    0x6c2df45a: 'TkpTesttextCmd + 0xc7fa'
+# 5    0x6c2e1555: 'TkBTreeNumLines + 0x16b5'
+# 6    0x6c2d9843: 'TkpTesttextCmd + 0x6be3'
+# 7    0x6c2d8968: 'TkpTesttextCmd + 0x5d08'
+# 8    0x6c27ec2d: 'Tk_HandleEvent + 0x20d'
+# 9    0x6c300550: 'Tk_DestroyWindow + 0x2f0'
+# 10   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 11   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 12   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 13   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 14   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 15   0x6c30045d: 'Tk_DestroyWindow + 0x1fd'
+# 16   0x6c2fdca3: 'Tk_PkgInitStubsCheck + 0xc33'
+# 17   0x6c27dbec: 'Tk_MainLoop + 0xac'
+# 18   0x6c75ee6c: 'Tcl_FinalizeThread + 0x5c'
+# 19   0x6c75ea0c: 'Tcl_Exit + 0xac'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Mon Sep 12 16:52:39 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 004a2d85. Traceback:
+# 0    0x004a2d85: 'xsltIterateSupportedLocales + 0x96355'
+# 1    0x00766faa: 'WlfContextItem::`vector deleting destructor' + 0x6bd0a'
+# 2    0x0076830c: 'WlfContextItem::`vector deleting destructor' + 0x6d06c'
+# 3    0x007665b5: 'WlfContextItem::`vector deleting destructor' + 0x6b315'
+# 4    0x007646be: 'WlfContextItem::`vector deleting destructor' + 0x6941e'
+# 5    0x0067cd1d: 'WinMain + 0x12398d'
+# 6    0x004f72f9: 'EnumDispProc + 0x1779'
+# 7    0x6dd51fae: 'TclInvokeStringCommand + 0xbe'
+# 8    0x6dd539f1: 'TclNREvalObjv + 0x3e1'
+# 9    0x6dd53a49: 'TclNRRunCallbacks + 0x49'
+# 10   0x6dd5563c: 'Tcl_EvalObjEx + 0x2c'
+# 11   0x6e210400: 'Itcl_EvalMemberCode + 0x300'
+# 12   0x14f523f8: '<unknown (@0x14f523f8)>'
+# 13   0xcccccccc: '<unknown (@0xcccccccc)>'
+# 14   0x0264eefc: '<unknown (@0x264eefc)>'
+# 15   0x0264a79c: '<unknown (@0x264a79c)>'
+# 16   0x6dd539f1: 'TclNREvalObjv + 0x3e1'
+# 17   0x6dd53a49: 'TclNRRunCallbacks + 0x49'
+# 18   0x6dd54ef9: 'Tcl_EvalEx + 0x8b9'
+# 19   0x6dd5465a: 'Tcl_EvalEx + 0x1a'
+# 20   0x6ce51dd9: 'TkBindEventProc + 0x1b9'
+# 21   0x6ce5ec67: 'Tk_HandleEvent + 0x247'
+# 22   0x6ce5de5c: 'TkDeleteThreadExitHandler + 0x24c'
+# 23   0x6ddeacb5: 'Tcl_ServiceEvent + 0xc5'
+# 24   0x6ddeb072: 'Tcl_DoOneEvent + 0x162'
+StackWalk failed 0
+# End of Stack Trace
+

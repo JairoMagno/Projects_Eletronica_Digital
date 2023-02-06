@@ -1,0 +1,18 @@
+SUBDESIGN Questao1(
+	clk_in	:	INPUT;
+	Saida		:	OUTPUT;
+)
+
+VARIABLE 
+	
+	fsm: MACHINE WITH STATES (s0, s1, s2);
+	
+BEGIN
+	
+	fsm.clk	=	clk_in;
+	TABLE
+		fsm	=>	fsm,	saida;
+		s0		=>	s1,	GND;
+		s1		=>	s2,	GND;
+		s2		=>	s0,	VCC;	
+END;

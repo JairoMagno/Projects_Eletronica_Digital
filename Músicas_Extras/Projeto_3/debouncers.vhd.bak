@@ -1,0 +1,27 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164;
+
+ENTITY debouncers IS
+	PORT(
+		clk 						 : IN  std_logic;
+		b1, b2, b3, b4 		 : IN  std_logic;
+		mute, play, sel, stop : OUT std_logic
+	);
+END debouncers;
+
+ARCHITECTURE deb OF debouncers IS
+	COMPONENT debounce
+		PORT(clk   : IN  std_logic;
+			  botao : IN  std_logic;
+			  output: OUT std_logic);
+		END COMPONENT;
+		
+	--SIGNAL s : std_logic_vector (3 DOWNTO 0);
+BEGIN
+
+	d1 : debounce PORT MAP (clk => clk, b1 => botao, output => mute); 
+	d2 : debounce PORT MAP (clk => clk, b2 => botao, output => play); 
+	d3 : debounce PORT MAP (clk => clk, b3 => botao, output => sel); 
+	d4 : debounce PORT MAP (clk => clk, b4 => botao, output => stop); 
+	
+END deb;

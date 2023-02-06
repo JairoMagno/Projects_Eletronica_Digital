@@ -1,0 +1,18 @@
+SUBDESIGN Exemplo(
+	A[3..1], B[3..1]	:	INPUT;
+	Saida					:	OUTPUT;
+)
+
+VARIABLE 
+	a	:	NODE;
+	b	:	NODE;
+	c	:	NODE;
+BEGIN
+	
+	a = A[] NOR B[];
+	b = A[] NAND B[];
+	c = A[] OR B[];
+	
+	Saida = a AND b AND c;
+	
+END;
