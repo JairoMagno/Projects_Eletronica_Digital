@@ -1,0 +1,173 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -3.324
+TNS   : -154.491
+
+Type  : Slow 1200mV 85C Model Setup 'ist17'
+Slack : -0.279
+TNS   : -0.279
+
+Type  : Slow 1200mV 85C Model Setup 'Seletor_Display:ist20|inst'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'key[4]'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ist17'
+Slack : 0.374
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Seletor_Display:ist20|inst'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'key[4]'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'key[4]'
+Slack : -2.034
+TNS   : -19.187
+
+Type  : Slow 1200mV 85C Model Removal 'key[4]'
+Slack : 0.498
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -62.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'key[4]'
+Slack : -3.000
+TNS   : -13.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Seletor_Display:ist20|inst'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ist17'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -2.839
+TNS   : -129.997
+
+Type  : Slow 1200mV 0C Model Setup 'ist17'
+Slack : -0.173
+TNS   : -0.173
+
+Type  : Slow 1200mV 0C Model Setup 'Seletor_Display:ist20|inst'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'key[4]'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ist17'
+Slack : 0.303
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Seletor_Display:ist20|inst'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'key[4]'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'key[4]'
+Slack : -1.725
+TNS   : -16.198
+
+Type  : Slow 1200mV 0C Model Removal 'key[4]'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -62.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'key[4]'
+Slack : -3.000
+TNS   : -13.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Seletor_Display:ist20|inst'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ist17'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -1.450
+TNS   : -62.490
+
+Type  : Fast 1200mV 0C Model Setup 'ist17'
+Slack : 0.086
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Seletor_Display:ist20|inst'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'key[4]'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ist17'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Seletor_Display:ist20|inst'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'key[4]'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'key[4]'
+Slack : -0.692
+TNS   : -6.254
+
+Type  : Fast 1200mV 0C Model Removal 'key[4]'
+Slack : 0.255
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -65.864
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'key[4]'
+Slack : -3.000
+TNS   : -13.338
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Seletor_Display:ist20|inst'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ist17'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

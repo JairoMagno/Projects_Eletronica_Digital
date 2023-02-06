@@ -1,0 +1,87 @@
+# Reading pref.tcl
+# do Contador_Sincrono_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Contador_Sincrono.vho}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:17:02 on Jul 30,2022
+# vcom -reportprogress 300 -93 -work work Contador_Sincrono.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Compiling entity Contador_Sincrono
+# -- Compiling architecture structure of Contador_Sincrono
+# End time: 00:17:03 on Jul 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim work.contador_sincrono
+# vsim work.contador_sincrono 
+# Start time: 00:17:13 on Jul 30,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.contador_sincrono(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+# Loading cycloneive.cycloneive_ena_reg(behave)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+# ** Warning: Design size of 38053 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+add wave -position insertpoint  \
+sim:/contador_sincrono/unidade_seg \
+sim:/contador_sincrono/unidade \
+sim:/contador_sincrono/seg \
+sim:/contador_sincrono/key \
+sim:/contador_sincrono/dezena_seg \
+sim:/contador_sincrono/dezena \
+sim:/contador_sincrono/clock \
+sim:/contador_sincrono/centena_seg \
+sim:/contador_sincrono/centena \
+sim:/contador_sincrono/bit
+add wave -position insertpoint  \
+sim:/contador_sincrono/unidade_seg \
+sim:/contador_sincrono/unidade \
+sim:/contador_sincrono/seg \
+sim:/contador_sincrono/key \
+sim:/contador_sincrono/dezena_seg \
+sim:/contador_sincrono/dezena \
+sim:/contador_sincrono/clock \
+sim:/contador_sincrono/centena_seg \
+sim:/contador_sincrono/centena \
+sim:/contador_sincrono/bit
+force -freeze sim:/contador_sincrono/clock 1 0, 0 {50 ps} -r 100
+force -freeze sim:/contador_sincrono/key 1111 0
+run
+run
+run
+run
+run
+run
+# End time: 00:19:55 on Jul 30,2022, Elapsed time: 0:02:42
+# Errors: 0, Warnings: 1
