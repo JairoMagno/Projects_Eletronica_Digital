@@ -1,0 +1,18 @@
+module gera_pulso
+
+(
+	input clk,				//Clock Placa
+	input button,			//Botao de entrada
+	output reg pulso		//Pulso de saída
+);
+
+	reg [1:0] ff;			//Flip Flops
+
+	always @(posedge clk) begin
+	
+		ff[1] = ff[0];						//Estado anterior
+		ff[0] = button;					//Estado atual
+		pulso = !(!ff[0] | ff[1]);		//Pulso
+		
+	end
+endmodule

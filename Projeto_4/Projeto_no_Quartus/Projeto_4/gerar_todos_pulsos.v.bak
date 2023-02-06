@@ -1,0 +1,15 @@
+module gerar_todos_pulsos
+(
+	input clock_in,
+	input mute_local, play_local, selecao_local, stop_local,
+	input mute_remoto, play_remoto, selecao_remoto, stop_remoto,
+	output mute_pulso, play_pulso, selecao_pulso, stop_pulso 
+);
+
+always @(clock_in) begin 
+
+	
+
+end
+endmodule
+		

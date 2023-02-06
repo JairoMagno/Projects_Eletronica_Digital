@@ -1,0 +1,318 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 392 312 560 328)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "clock_in" (rect 5 0 43 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 416 408 592 424)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "centena" (rect 90 0 127 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 416 440 604 456)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "dezena[3..0]" (rect 90 0 147 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 416 472 608 488)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "unidade[3..0]" (rect 90 0 151 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 416 504 604 520)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "decimo[3..0]" (rect 90 0 147 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 416 344 592 360)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "scl_out" (rect 90 0 125 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(bidir)
+	(rect 392 376 568 392)
+	(text "BIDIR" (rect 139 0 163 10)(font "Arial" (font_size 6)))
+	(text "sda_in" (rect 5 0 35 17)(font "Intel Clear" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 121 4)(pt 99 4))
+		(line (pt 177 8)(pt 125 8))
+		(line (pt 121 12)(pt 99 12))
+		(line (pt 99 4)(pt 95 8))
+		(line (pt 99 12)(pt 95 8))
+		(line (pt 121 4)(pt 125 8))
+		(line (pt 125 8)(pt 121 12))
+	)
+	(flipy)
+	(text "VCC" (rect 144 7 164 17)(font "Arial" (font_size 6)))
+)
+(symbol
+	(rect 720 352 872 464)
+	(text "I2C_READ_verilog" (rect 5 0 98 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "scl" (rect 0 0 14 12)(font "Arial" ))
+		(text "scl" (rect 115 27 129 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(port
+		(pt 152 64)
+		(output)
+		(text "data[15..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "data[15..0]" (rect 64 59 117 71)(font "Arial" ))
+		(line (pt 152 64)(pt 136 64)(line_width 3))
+	)
+	(port
+		(pt 152 48)
+		(bidir)
+		(text "sda" (rect 0 0 17 12)(font "Arial" ))
+		(text "sda" (rect 117 43 134 55)(font "Arial" ))
+		(line (pt 152 48)(pt 136 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 96))
+	)
+)
+(symbol
+	(rect 1040 368 1232 480)
+	(text "decodificador_I2C" (rect 5 0 94 12)(font "Arial" ))
+	(text "inst1" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data[15..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "data[15..0]" (rect 21 27 74 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "centena" (rect 0 0 38 12)(font "Arial" ))
+		(text "centena" (rect 139 27 177 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "dezena[3..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "dezena[3..0]" (rect 121 43 181 55)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48)(line_width 3))
+	)
+	(port
+		(pt 192 64)
+		(output)
+		(text "unidade[3..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "unidade[3..0]" (rect 118 59 181 71)(font "Arial" ))
+		(line (pt 192 64)(pt 176 64)(line_width 3))
+	)
+	(port
+		(pt 192 80)
+		(output)
+		(text "decimo[3..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "decimo[3..0]" (rect 120 75 181 87)(font "Arial" ))
+		(line (pt 192 80)(pt 176 80)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 96))
+	)
+)
+(connector
+	(pt 872 400)
+	(pt 904 400)
+)
+(connector
+	(pt 888 384)
+	(pt 888 360)
+)
+(connector
+	(pt 872 384)
+	(pt 888 384)
+)
+(connector
+	(pt 904 376)
+	(pt 904 400)
+)
+(connector
+	(text " scl" (rect 936 344 951 361)(font "Intel Clear" ))
+	(pt 888 360)
+	(pt 928 360)
+)
+(connector
+	(text " sda" (rect 932 360 950 377)(font "Intel Clear" ))
+	(pt 904 376)
+	(pt 928 376)
+)
+(connector
+	(text "centena" (rect 1256 384 1293 401)(font "Intel Clear" ))
+	(pt 1232 400)
+	(pt 1248 400)
+)
+(connector
+	(text "dezena[3..0]" (rect 1256 400 1313 417)(font "Intel Clear" ))
+	(pt 1232 416)
+	(pt 1248 416)
+	(bus)
+)
+(connector
+	(text "unidade[3..0]" (rect 1257 416 1318 433)(font "Intel Clear" ))
+	(pt 1232 432)
+	(pt 1248 432)
+	(bus)
+)
+(connector
+	(text "decimo[3..0]" (rect 1256 432 1313 449)(font "Intel Clear" ))
+	(pt 1232 448)
+	(pt 1248 448)
+	(bus)
+)
+(connector
+	(text "clock" (rect 648 368 672 385)(font "Intel Clear" ))
+	(pt 720 384)
+	(pt 688 384)
+)
+(connector
+	(pt 416 416)
+	(pt 400 416)
+)
+(connector
+	(pt 416 448)
+	(pt 400 448)
+	(bus)
+)
+(connector
+	(pt 416 480)
+	(pt 400 480)
+	(bus)
+)
+(connector
+	(pt 416 512)
+	(pt 400 512)
+	(bus)
+)
+(connector
+	(text " sda" (rect 592 368 610 385)(font "Intel Clear" ))
+	(pt 568 384)
+	(pt 584 384)
+)
+(connector
+	(text " clock" (rect 576 304 603 321)(font "Intel Clear" ))
+	(pt 560 320)
+	(pt 576 320)
+)
+(connector
+	(text " scl" (rect 360 344 375 361)(font "Intel Clear" ))
+	(pt 400 352)
+	(pt 416 352)
+)
+(connector
+	(pt 1016 416)
+	(pt 872 416)
+	(bus)
+)
+(connector
+	(pt 1016 416)
+	(pt 1016 400)
+	(bus)
+)
+(connector
+	(pt 1040 400)
+	(pt 1016 400)
+	(bus)
+)

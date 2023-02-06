@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -12.592
+TNS   : -4402.710
+
+Type  : Slow 1200mV 85C Model Setup 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : -5.069
+TNS   : -19.437
+
+Type  : Slow 1200mV 85C Model Setup 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : -2.546
+TNS   : -32.092
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : 0.662
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -1240.184
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : -1.487
+TNS   : -22.305
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -11.755
+TNS   : -4046.055
+
+Type  : Slow 1200mV 0C Model Setup 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : -4.693
+TNS   : -18.064
+
+Type  : Slow 1200mV 0C Model Setup 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : -2.302
+TNS   : -28.850
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : 0.733
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -1240.184
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : -1.487
+TNS   : -22.305
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : 0.309
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -4.774
+TNS   : -1421.368
+
+Type  : Fast 1200mV 0C Model Setup 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : -2.017
+TNS   : -7.644
+
+Type  : Fast 1200mV 0C Model Setup 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : -0.557
+TNS   : -5.622
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -894.448
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'contador_sincrono:inst2|DivisorClock:dig1|Clk_out'
+Slack : -1.000
+TNS   : -15.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Bloco_Tratamento_Dados:inst9|ir_code:inst2|comando[0]'
+Slack : 0.393
+TNS   : 0.000
+
+------------------------------------------------------------

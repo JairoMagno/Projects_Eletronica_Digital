@@ -1,0 +1,29 @@
+module Estrutura_FrereJacques
+(
+	output buzzer,
+	input clock
+);
+	
+	wire t1,t2,t4;
+	wire [27:0] t3,t5;
+	
+	temporizador 	temp( .Q(t1),
+								.Clk(clock),
+								.Disparo(t2),
+								.Overflow(t3)
+						);
+						
+	divisor_clock 	div_clk( .Clk_out(buzzer),
+									.Clk_in(t4),
+									.Overflow(t5)
+						);
+	
+	FrereJacques 	control( .Clk_out(t4),
+									.Disparo(t2),
+									.Temp_out(t3),
+									.Freq_out(t5),
+									.Clk_in(clock),
+									.Duracao(t1)
+						);
+	
+endmodule

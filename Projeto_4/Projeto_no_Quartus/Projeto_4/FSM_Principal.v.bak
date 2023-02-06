@@ -1,0 +1,10 @@
+module FSM_Principal
+(
+
+);
+
+always @(clock_in) begin 
+
+end
+endmodule
+		

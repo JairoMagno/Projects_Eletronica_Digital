@@ -1,0 +1,158 @@
+# Reading pref.tcl
+# do Projeto_4_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Projeto_4.vho}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:48:50 on Oct 12,2022
+# vcom -reportprogress 300 -93 -work work Projeto_4.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Compiling entity gerar_todos_pulsos
+# -- Compiling architecture structure of gerar_todos_pulsos
+# End time: 15:48:50 on Oct 12,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.gerar_todos_pulsos
+# vsim work.gerar_todos_pulsos 
+# Start time: 15:48:57 on Oct 12,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.gerar_todos_pulsos(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+# Loading cycloneive.cycloneive_ena_reg(behave)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+vsim work.gerar_todos_pulsos
+# End time: 15:49:10 on Oct 12,2022, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 0
+# vsim work.gerar_todos_pulsos 
+# Start time: 15:49:10 on Oct 12,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.gerar_todos_pulsos(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+# Loading cycloneive.cycloneive_ena_reg(behave)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+vsim work.gerar_todos_pulsos
+# End time: 15:49:15 on Oct 12,2022, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# vsim work.gerar_todos_pulsos 
+# Start time: 15:49:15 on Oct 12,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.gerar_todos_pulsos(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)
+# Loading cycloneive.cycloneive_ena_reg(behave)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# Loading altera.dffeas(vital_dffeas)
+add wave -position insertpoint  \
+sim:/gerar_todos_pulsos/mute_pulso_R \
+sim:/gerar_todos_pulsos/mute_remoto \
+sim:/gerar_todos_pulsos/play_local \
+sim:/gerar_todos_pulsos/play_pulso_L \
+sim:/gerar_todos_pulsos/play_pulso_R \
+sim:/gerar_todos_pulsos/play_remoto \
+sim:/gerar_todos_pulsos/selecao_local \
+sim:/gerar_todos_pulsos/selecao_pulso_L \
+sim:/gerar_todos_pulsos/selecao_pulso_R \
+sim:/gerar_todos_pulsos/selecao_remoto \
+sim:/gerar_todos_pulsos/stop_local \
+sim:/gerar_todos_pulsos/stop_pulso_L \
+sim:/gerar_todos_pulsos/stop_pulso_R \
+sim:/gerar_todos_pulsos/stop_remoto
+add wave -position insertpoint  \
+sim:/gerar_todos_pulsos/clock_in
+force -freeze sim:/gerar_todos_pulsos/clock_in 1 0, 0 {50 ps} -r 100
+force -freeze sim:/gerar_todos_pulsos/play_local 1 0
+force -freeze sim:/gerar_todos_pulsos/selecao_local 1 0
+force -freeze sim:/gerar_todos_pulsos/stop_local 1 0
+force -freeze sim:/gerar_todos_pulsos/mute_remoto 1 0
+force -freeze sim:/gerar_todos_pulsos/play_remoto 1 0
+force -freeze sim:/gerar_todos_pulsos/selecao_remoto 1 0
+force -freeze sim:/gerar_todos_pulsos/stop_remoto 1 0
+run
+run
+run
+force -freeze sim:/gerar_todos_pulsos/play_local 0 0
+force -freeze sim:/gerar_todos_pulsos/selecao_local 0 0
+force -freeze sim:/gerar_todos_pulsos/stop_local 0 0
+force -freeze sim:/gerar_todos_pulsos/mute_remoto 0 0
+force -freeze sim:/gerar_todos_pulsos/play_remoto 0 0
+force -freeze sim:/gerar_todos_pulsos/selecao_remoto 0 0
+force -freeze sim:/gerar_todos_pulsos/stop_remoto 0 0
+run
+run
+run
+run
+noforce sim:/gerar_todos_pulsos/play_local
+noforce sim:/gerar_todos_pulsos/selecao_local
+noforce sim:/gerar_todos_pulsos/stop_local
+noforce sim:/gerar_todos_pulsos/mute_remoto
+noforce sim:/gerar_todos_pulsos/play_remoto
+noforce sim:/gerar_todos_pulsos/selecao_remoto
+noforce sim:/gerar_todos_pulsos/stop_remoto
+force -freeze sim:/gerar_todos_pulsos/play_local 1 0
+force -freeze sim:/gerar_todos_pulsos/selecao_local 1 0
+force -freeze sim:/gerar_todos_pulsos/stop_local 1 0
+force -freeze sim:/gerar_todos_pulsos/mute_remoto 1 0
+force -freeze sim:/gerar_todos_pulsos/play_remoto 1 0
+force -freeze sim:/gerar_todos_pulsos/selecao_remoto 1 0
+force -freeze sim:/gerar_todos_pulsos/stop_remoto 1 0
+run
+run
+run
+run
+# End time: 15:52:27 on Oct 12,2022, Elapsed time: 0:03:12
+# Errors: 0, Warnings: 0
