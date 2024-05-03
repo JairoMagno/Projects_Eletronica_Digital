@@ -1,0 +1,70 @@
+# Current time Tue Jul 26 16:37:37 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 6c510a07. Traceback:
+# 0    0x6c510a07: 'TkBTreeNumLines + 0xb67'
+# 1    0x6c507bc6: 'TkpTesttextCmd + 0x4f66'
+# 2    0x6c50b18e: 'TkpTesttextCmd + 0x852e'
+# 3    0x6cd339f1: 'TclNREvalObjv + 0x3e1'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Tue Jul 26 16:37:37 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 3ddc57dd. Traceback:
+# 0    0x3ddc57dd: '<unknown (@0x3ddc57dd)>'
+# 1    0x6c517da7: 'TkBTreeNumLines + 0x7f07'
+# 2    0x6c516b89: 'TkBTreeNumLines + 0x6ce9'
+# 3    0x6c514746: 'TkBTreeNumLines + 0x48a6'
+# 4    0x6cdf653b: 'TclServiceIdle + 0x4b'
+# 5    0x6cd8efbe: 'TclInThreadExit + 0xce'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Tue Jul 26 16:37:37 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 3ddc57dd. Traceback:
+# 0    0x3ddc57dd: '<unknown (@0x3ddc57dd)>'
+# 1    0x6c517da7: 'TkBTreeNumLines + 0x7f07'
+# 2    0x6c516b89: 'TkBTreeNumLines + 0x6ce9'
+# 3    0x6c514746: 'TkBTreeNumLines + 0x48a6'
+# 4    0x6cdf653b: 'TclServiceIdle + 0x4b'
+# 5    0x6cd8efbe: 'TclInThreadExit + 0xce'
+StackWalk failed 299
+# End of Stack Trace
+
+# Current time Tue Jul 26 16:37:37 2022
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 3ddc57dd. Traceback:
+# 0    0x3ddc57dd: '<unknown (@0x3ddc57dd)>'
+# 1    0x6c517da7: 'TkBTreeNumLines + 0x7f07'
+# 2    0x6c516b89: 'TkBTreeNumLines + 0x6ce9'
+# 3    0x6c514746: 'TkBTreeNumLines + 0x48a6'
+# 4    0x6cdf653b: 'TclServiceIdle + 0x4b'
+# 5    0x6cd8efbe: 'TclInThreadExit + 0xce'
+StackWalk failed 299
+# End of Stack Trace
+
